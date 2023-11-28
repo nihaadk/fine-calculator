@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FineFormComponent } from '../../components/fine-calc-form/fine-form.component';
+import { FineFormComponent } from '../../components/fine-form/fine-form.component';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +9,7 @@ import { FineFormComponent } from '../../components/fine-calc-form/fine-form.com
   template: `
     <div class="card w-96 bg-base-100 shadow-xl">
       <div class="card-body">
+        <h2 class="card-title">EINGABE</h2>
         <app-fine-form />
       </div>
     </div>
