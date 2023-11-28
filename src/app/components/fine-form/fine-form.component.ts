@@ -20,10 +20,13 @@ import { StreetType } from '../../enums/street-type.enum';
   template: `
     <form [formGroup]="form">
       <app-label>Strassentyp:</app-label>
-      <app-radio-contoler formControlName="radio" [options]="opt" />
+      <app-radio-contoler formControlName="strassentyp" [options]="streetTypOptions" />
 
-      <!-- <app-label>Strassentyp:</app-label>
-      <app-range-contoler formControlName="range" /> -->
+      <app-label>Erlaubte Geschwindigkeit:</app-label>
+      <app-range-contoler formControlName="erlaubt" [max]="120" [step]="10" />
+
+      <app-label>Geschätzte Geschwindigkeit:</app-label>
+      <app-range-contoler formControlName="geschatzte" [max]="150" />
 
       <br />
 
@@ -33,25 +36,29 @@ import { StreetType } from '../../enums/street-type.enum';
 })
 export class FineFormComponent implements OnInit {
   form!: UntypedFormGroup;
-  opt: string[] = [];
+  streetTypOptions: string[] = [];
 
-  #fb = inject(FormBuilder);
-  #options = inject(OptionService);
+  #formBuilder = inject(FormBuilder);
+  #optionService = inject(OptionService);
 
   ngOnInit(): void {
-    this.opt = this.#options.getStreetTypes(StreetType);
+    this.loadOptions();
     this.buildForm();
   }
 
   onSubmit(): void {
     console.log(this.form.value);
-    console.log();
   }
 
   private buildForm(): void {
-    this.form = this.#fb.group({
-      radio: [this.opt[0]],
-      range: [null],
+    this.form = this.#formBuilder.group({
+      strassentyp: [this.streetTypOptions[0]],
+      erlaubt: [null],
+      geschatzte: [null],
     });
+  }
+
+  private loadOptions(): void {
+    this.streetTypOptions = this.#optionService.getStreetTypes(StreetType);
   }
 }

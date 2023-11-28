@@ -8,9 +8,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   standalone: true,
   imports: [CommonModule, RouterOutlet, NavbarComponent],
   template: `
-    <main class="main">
+    <main>
       <app-navbar />
-      <div class="container mx-auto px-4">
+      <div class="mx-auto p-4 m-0 h-screen bg-primary-content">
         <router-outlet></router-outlet>
       </div>
     </main>

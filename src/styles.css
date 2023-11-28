@@ -10,6 +10,10 @@
   .radio-button-color {
     @apply radio-primary;
   }
+
+  .range-input-color {
+    @apply range-primary;
+  }
 }
 
 @layer utilities {
