@@ -28,7 +28,7 @@ const RANGE_CONTROL_ACCESSOR = {
       />
     </p>
 
-    <div class="w-full flex justify-center text-xs px-2 py-2">
+    <div class="w-full flex justify-center text-md px-2 py-2">
       <span>{{ value }} km/h</span>
     </div>
   `,
