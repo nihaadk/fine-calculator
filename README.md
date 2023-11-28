@@ -10,3 +10,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     4. Display the calculations in a simple table.
     5. Utilize the SignalStore.
     6. Implement the calculations in the service.
+    7. Add ngx-translate
