@@ -21,7 +21,8 @@ const RADIO_CONTROL_ACCESSOR = {
           <span class="lsabel-text">{{ option }}</span>
           <input
             type="radio"
-            name="radio-10"
+            [name]="name"
+            [id]="option + '-' + $index"
             [value]="value"
             (blur)="onBlur()"
             [checked]="isCheck(value)"
@@ -36,6 +37,7 @@ const RADIO_CONTROL_ACCESSOR = {
 })
 export class RadioControlerComponent implements ControlValueAccessor {
   @Input() options: string[] = [];
+  @Input() name: string = '';
 
   value: radioValueType = null;
   private onChange!: (value: radioValueType) => void;

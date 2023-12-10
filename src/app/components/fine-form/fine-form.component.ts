@@ -6,6 +6,9 @@ import { RangeControlerComponent } from '../range-controler/range-contoler.compo
 import { LabelComponent } from '../label/label.component';
 import { OptionService } from '../../utils/option.service';
 import { StreetType } from '../../enums/street-type.enum';
+import { RadarType } from '../../enums/radar-type.enum';
+import { FormControlWrapperComponent } from '../form-control-wrapper/form-control-wrapper.component';
+import { FineStore } from '../../+state/FineStore';
 
 @Component({
   selector: 'app-fine-form',
@@ -16,49 +19,70 @@ import { StreetType } from '../../enums/street-type.enum';
     RadioControlerComponent,
     RangeControlerComponent,
     LabelComponent,
+    FormControlWrapperComponent,
   ],
   template: `
-    <form [formGroup]="form">
-      <app-label>Strassentyp:</app-label>
-      <app-radio-contoler formControlName="strassentyp" [options]="streetTypOptions" />
+    <form [formGroup]="form" class="p-2">
+      <app-form-control>
+        <app-label>Strassentyp</app-label>
+        <app-radio-contoler
+          name="strassentyp"
+          formControlName="strassentyp"
+          [options]="streetTypOptions"
+        />
+      </app-form-control>
 
-      <app-label>Erlaubte Geschwindigkeit:</app-label>
-      <app-range-contoler formControlName="erlaubt" [max]="120" [step]="10" />
+      <app-form-control>
+        <app-label>Erlaubte Geschwindigkeit</app-label>
+        <app-range-contoler formControlName="allowedSpeed" [max]="120" [step]="10" />
+      </app-form-control>
 
-      <app-label>Geschätzte Geschwindigkeit:</app-label>
-      <app-range-contoler formControlName="geschatzte" [max]="150" />
+      <app-form-control>
+        <app-label>Geschätzte Geschwindigkeit:</app-label>
+        <app-range-contoler formControlName="netSpeed" [max]="150" />
+      </app-form-control>
 
-      <br />
-
-      <button (click)="onSubmit()" class="btn btn-primary">Submit</button>
+      <app-form-control>
+        <app-label>Radartype</app-label>
+        <app-radio-contoler
+          name="radartyp"
+          formControlName="radartyp"
+          [options]="radartypeOptions"
+        />
+      </app-form-control>
     </form>
   `,
 })
 export class FineFormComponent implements OnInit {
   form!: UntypedFormGroup;
   streetTypOptions: string[] = [];
+  radartypeOptions: string[] = [];
 
   #formBuilder = inject(FormBuilder);
   #optionService = inject(OptionService);
+  #fineStore = inject(FineStore);
 
   ngOnInit(): void {
     this.loadOptions();
     this.buildForm();
-  }
-
-  onSubmit(): void {
-    console.log(this.form.value);
+    this.subscribeForm();
   }
 
   private buildForm(): void {
     this.form = this.#formBuilder.group({
       strassentyp: [this.streetTypOptions[0]],
-      erlaubt: [null],
-      geschatzte: [null],
+      allowedSpeed: [0],
+      netSpeed: [0],
+      radartyp: [this.streetTypOptions[0]],
     });
   }
 
   private loadOptions(): void {
-    this.streetTypOptions = this.#optionService.getStreetTypes(StreetType);
+    this.streetTypOptions = this.#optionService.getOptions(StreetType);
+    this.radartypeOptions = this.#optionService.getOptions(RadarType);
+  }
+
+  private subscribeForm(): void {
+    this.form.valueChanges.subscribe(value => this.#fineStore.update(value));
   }
 }

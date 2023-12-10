@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <label class="label">
-      <span class="label-text text-xl">
-        <ng-content></ng-content>
+      <span class="label-text text-xl py-2">
+        <ng-content />
       </span>
     </label>
   `,
