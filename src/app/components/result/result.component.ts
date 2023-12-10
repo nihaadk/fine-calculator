@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Signal, inject } from '@angular/core';
-import { FineStore } from '../../+state/FineStore';
+import { Store } from '../../+state/store';
 import { LabelComponent } from '../label/label.component';
 
 @Component({
@@ -53,9 +53,9 @@ export class ResultComponent implements OnInit {
       this.exceedingSpeed(),
     );
   }
-  #fineStore = inject(FineStore);
+  #store = inject(Store);
 
-  allowedSpeed: Signal<number> = this.#fineStore.allowedSpeedComp;
-  netSpeed: Signal<number> = this.#fineStore.netSpeedComp;
-  exceedingSpeed: Signal<number> = this.#fineStore.exceedingSpeed;
+  allowedSpeed: Signal<number> = this.#store.allowedSpeedComp;
+  netSpeed: Signal<number> = this.#store.netSpeedComp;
+  exceedingSpeed: Signal<number> = this.#store.exceedingSpeed;
 }

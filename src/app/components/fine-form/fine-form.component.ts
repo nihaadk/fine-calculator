@@ -1,14 +1,14 @@
-import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { Store } from '../../+state/store';
+import { RadarType } from '../../enums/radar-type.enum';
+import { StreetType } from '../../enums/street-type.enum';
+import { OptionService } from '../../utils/option.service';
+import { FormControlWrapperComponent } from '../form-control-wrapper/form-control-wrapper.component';
+import { LabelComponent } from '../label/label.component';
 import { RadioControlerComponent } from '../radio-controler/radio-controler.component';
 import { RangeControlerComponent } from '../range-controler/range-contoler.component';
-import { LabelComponent } from '../label/label.component';
-import { OptionService } from '../../utils/option.service';
-import { StreetType } from '../../enums/street-type.enum';
-import { RadarType } from '../../enums/radar-type.enum';
-import { FormControlWrapperComponent } from '../form-control-wrapper/form-control-wrapper.component';
-import { FineStore } from '../../+state/FineStore';
 
 @Component({
   selector: 'app-fine-form',
@@ -60,7 +60,7 @@ export class FineFormComponent implements OnInit {
 
   #formBuilder = inject(FormBuilder);
   #optionService = inject(OptionService);
-  #fineStore = inject(FineStore);
+  #store = inject(Store);
 
   ngOnInit(): void {
     this.loadOptions();
@@ -83,6 +83,6 @@ export class FineFormComponent implements OnInit {
   }
 
   private subscribeForm(): void {
-    this.form.valueChanges.subscribe(value => this.#fineStore.update(value));
+    this.form.valueChanges.subscribe(value => this.#store.updateFine(value));
   }
 }
