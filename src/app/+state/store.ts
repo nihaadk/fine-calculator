@@ -3,18 +3,19 @@ import { patchState, signalStore, withComputed, withMethods, withState } from '@
 import { Theme } from '../enums/theme.enum';
 import { Fine } from '../interfaces/fine.interfaces';
 
-export const initiState: Fine = {
-  strassentyp: '',
-  allowedSpeed: 0,
-  netSpeed: 0,
-  radartyp: '',
+export const initiState = {
+  fine: {
+    strassentyp: '',
+    allowedSpeed: 0,
+    netSpeed: 0,
+    radartyp: '',
+  } as Fine,
+  theme: Theme.LIGHT,
 };
-
-export const initiTheme = Theme.LIGHT;
 
 export const Store = signalStore(
   { providedIn: 'root' },
-  withState({ fine: initiState, theme: initiTheme }),
+  withState(initiState),
   withComputed(({ fine }) => ({
     netSpeedComp: computed(() => fine().netSpeed),
     allowedSpeedComp: computed(() => fine().allowedSpeed),
