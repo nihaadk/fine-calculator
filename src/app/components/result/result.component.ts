@@ -2,15 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, Signal, inject } from '@angular/core';
 import { Store } from '../../+state/store';
 import { LabelComponent } from '../label/label.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [CommonModule, LabelComponent],
+  imports: [CommonModule, LabelComponent, TranslateModule],
   template: `
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">
-        <h2 class="card-title text-4xl justify-center divider divider-primary">Result</h2>
+        <h2 class="card-title text-4xl justify-center divider divider-primary" translate>
+          RESULT
+        </h2>
 
         <div class="stats my-5">
           <div class="stat place-items-center">

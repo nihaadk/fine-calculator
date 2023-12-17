@@ -4,7 +4,7 @@ import { FormBuilder, ReactiveFormsModule, UntypedFormGroup } from '@angular/for
 import { Store } from '../../+state/store';
 import { RadarType } from '../../enums/radar-type.enum';
 import { StreetType } from '../../enums/street-type.enum';
-import { OptionService } from '../../utils/option.service';
+import { OptionService } from '../../service/option.service';
 import { FormControlWrapperComponent } from '../form-control-wrapper/form-control-wrapper.component';
 import { LabelComponent } from '../label/label.component';
 import { RadioControlerComponent } from '../radio-controler/radio-controler.component';
