@@ -17,28 +17,28 @@ import { TranslateModule } from '@ngx-translate/core';
 
         <div class="stats my-5">
           <div class="stat place-items-center">
-            <div class="stat-title">Sicherheitsmarge</div>
+            <div class="stat-title" translate>SAFETY_MARGIN</div>
             <div class="stat-value">{{ allowedSpeed() }} km/h</div>
           </div>
 
           <div class="stat place-items-center">
-            <div class="stat-title">Nettogeschwindigkeit</div>
+            <div class="stat-title" translate>NET_SPEED</div>
             <div class="stat-value">{{ netSpeed() }} km/h</div>
           </div>
 
           <div class="stat place-items-center">
-            <div class="stat-title">Überschreitung um</div>
+            <div class="stat-title" translate>EXCEEDING</div>
             <div class="stat-value">{{ exceedingSpeed() }} km/h</div>
           </div>
         </div>
 
         <div class="flex flex-col">
-          <app-label>Bussgeld</app-label>
+          <app-label>{{ 'FINE' | translate }}</app-label>
           <div role="alert" class="alert alert-success">
             <span>Your purchase has been confirmed!</span>
           </div>
 
-          <app-label>Administrativmassnahmen (bei erstmaliger Verfehlung):</app-label>
+          <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
           <div role="alert" class="alert alert-success">
             <span>Your purchase has been confirmed!</span>
           </div>

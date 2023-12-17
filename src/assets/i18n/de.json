@@ -1,5 +1,10 @@
 {
-    "APP_TITLE": "Bussenrechner",
-    "INPUT": "Eingabe",
-    "RESULT": "Ergebnis"
+  "APP_TITLE": "Bussenrechner",
+  "INPUT": "Eingabe",
+  "RESULT": "Ergebnis",
+  "SAFETY_MARGIN": "Sicherheitsmarge",
+  "NET_SPEED": "Netto-Geschwindigkeit",
+  "EXCEEDING": "Überschreitung um",
+  "FINE": "Bussgeld",
+  "ADMINISTRATIVE_MEASURES": "Administrativmassnahmen (bei erstmaliger Verfehlung)"
 }

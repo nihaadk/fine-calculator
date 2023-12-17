@@ -1,5 +1,10 @@
 {
-    "APP_TITLE": "Fine Calculator",
-    "INPUT": "Input",
-    "RESULT": "Result"
+  "APP_TITLE": "Fine Calculator",
+  "INPUT": "Input",
+  "RESULT": "Result",
+  "SAFETY_MARGIN": "Safety margin",
+  "NET_SPEED": "Net speed",
+  "EXCEEDING": "Exceeding",
+  "FINE": "Fine",
+  "ADMINISTRATIVE_MEASURES": "Administrative measures (for first offense)"
 }
