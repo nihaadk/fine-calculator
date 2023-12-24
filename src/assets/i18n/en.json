@@ -20,5 +20,11 @@
     "RADAR_MOBILE": "Radar mobile (Safety margin 7-9 km/h)"
   },
   "ALLOWED_SPEED": "Allowed Speed",
-  "ESTIMATED_SPEED": "Estimated Speed"
+  "ESTIMATED_SPEED": "Estimated Speed",
+  "MEASURE_MESSAGES": {
+    "WARNING": "Admonishment",
+    "REMOVE_1_MONTH_LICENSE": "Withdrawal of driving license for at least 1 month",
+    "REMOVE_3_MONTH_LICENSE": "Withdrawal of driving license for at least 3 month",
+    "NO_CONSEQUENCES": "No other consequences"
+  }
 }

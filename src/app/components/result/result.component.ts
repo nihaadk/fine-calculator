@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Signal, inject } from '@angular/core';
+import { Component, OnInit, Signal, computed, inject } from '@angular/core';
 import { Store } from '../../+state/store';
 import { LabelComponent } from '../label/label.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { MeasuresMessages } from '../../enums/measures-messages.enum';
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [CommonModule, LabelComponent, TranslateModule],
+  imports: [CommonModule, LabelComponent, TranslateModule, AlertComponent],
   template: `
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">
@@ -39,26 +41,20 @@ import { TranslateModule } from '@ngx-translate/core';
           </div>
 
           <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
-          <div role="alert" class="alert alert-success">
-            <span>Your purchase has been confirmed!</span>
-          </div>
+          <app-alert [isError]="message() === NO_CONSEQUENCES">
+            {{ 'MEASURE_MESSAGES.' + message() | translate }}
+          </app-alert>
         </div>
       </div>
     </div>
   `,
 })
-export class ResultComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(
-      'ResultComponent',
-      this.allowedSpeed(),
-      this.netSpeed(),
-      this.exceedingSpeed(),
-    );
-  }
+export class ResultComponent {
   #store = inject(Store);
-
   allowedSpeed: Signal<number> = this.#store.allowedSpeedComp;
   netSpeed: Signal<number> = this.#store.netSpeedComp;
-  exceedingSpeed: Signal<number> = this.#store.exceedingSpeed;
+  exceedingSpeed: Signal<number> = computed(() => this.netSpeed() - this.allowedSpeed());
+  message: Signal<string> = this.#store.getFineMessage;
+
+  NO_CONSEQUENCES = MeasuresMessages.NO_CONSEQUENCES;
 }

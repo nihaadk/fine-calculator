@@ -20,5 +20,11 @@
     "RADAR_MOBILE": "Mobiler Radar (Sicherheitsmarge 7-9 km/h)"
   },
   "ALLOWED_SPEED": "Erlaubte Geschwindigkeit",
-  "ESTIMATED_SPEED": "Geschätzte Geschwindigkeit"
+  "ESTIMATED_SPEED": "Geschätzte Geschwindigkeit",
+  "MEASURE_MESSAGES": {
+    "WARNING": "Verwanung",
+    "REMOVE_1_MONTH_LICENSE": "Entzug des Führerausweises mindestens für 1 Monat",
+    "REMOVE_3_MONTH_LICENSE": "Entzug des Führerausweises mindestens für 3 Monat",
+    "NO_CONSEQUENCES": "Keine sonstigen Konsequenzen"
+  }
 }
