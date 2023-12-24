@@ -6,5 +6,19 @@
   "NET_SPEED": "Netto-Geschwindigkeit",
   "EXCEEDING": "Überschreitung um",
   "FINE": "Bussgeld",
-  "ADMINISTRATIVE_MEASURES": "Administrativmassnahmen (bei erstmaliger Verfehlung)"
+  "ADMINISTRATIVE_MEASURES": "Administrativmassnahmen (bei erstmaliger Verfehlung)",
+  "STREET_TYPE": "Strassentyp",
+  "STREET_TYPE_OPTIONS": {
+    "INNER_TOWN": "Innerorts",
+    "OUT_OF_TOWN": "Ausserorts",
+    "HIGHWAY": "Autobahn"
+  },
+  "RADAR_TYPE": "Radar-Typ",
+  "RADAR_TYPE_OPTIONS": {
+    "LASER_FIX": "Fixer Laser Radar (Sicherheitsmarge 3-5 km/h)",
+    "RADAR_FIX": "Fixer Radar (Sicherheitsmarge 5-7 km/h)",
+    "RADAR_MOBILE": "Mobiler Radar (Sicherheitsmarge 7-9 km/h)"
+  },
+  "ALLOWED_SPEED": "Erlaubte Geschwindigkeit",
+  "ESTIMATED_SPEED": "Geschätzte Geschwindigkeit"
 }

@@ -1,6 +1,7 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 type radioValueType = string | null;
 
@@ -13,16 +14,16 @@ const RADIO_CONTROL_ACCESSOR = {
 @Component({
   selector: 'app-radio-contoler',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     @for (option of options; track $index) {
       <div class="form-control">
         <label class="label cursor-pointer">
-          <span class="lsabel-text">{{ option }}</span>
+          <span class="lsabel-text" translate>{{ prefix + option }}</span>
           <input
             type="radio"
             [name]="name"
-            [id]="option + '-' + $index"
+            [id]="getId(option, $index)"
             [value]="value"
             (blur)="onBlur()"
             [checked]="isCheck(value)"
@@ -36,8 +37,9 @@ const RADIO_CONTROL_ACCESSOR = {
   providers: [RADIO_CONTROL_ACCESSOR],
 })
 export class RadioControlerComponent implements ControlValueAccessor {
-  @Input() options: string[] = [];
-  @Input() name: string = '';
+  @Input({ required: true }) options: string[] = [];
+  @Input() translatePrefix?: string = '';
+  @Input({ required: true }) name: string = '';
 
   value: radioValueType = null;
   private onChange!: (value: radioValueType) => void;
@@ -64,7 +66,15 @@ export class RadioControlerComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
+  getId(option: string, index: number): string {
+    return `${option}-${index}`;
+  }
+
   isCheck(value: radioValueType): boolean {
     return this.value === value;
+  }
+
+  get prefix(): string {
+    return this.translatePrefix ? `${this.translatePrefix}.` : 'RADIO.';
   }
 }

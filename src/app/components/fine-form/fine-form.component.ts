@@ -9,6 +9,7 @@ import { FormControlWrapperComponent } from '../form-control-wrapper/form-contro
 import { LabelComponent } from '../label/label.component';
 import { RadioControlerComponent } from '../radio-controler/radio-controler.component';
 import { RangeControlerComponent } from '../range-controler/range-contoler.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-fine-form',
@@ -20,34 +21,37 @@ import { RangeControlerComponent } from '../range-controler/range-contoler.compo
     RangeControlerComponent,
     LabelComponent,
     FormControlWrapperComponent,
+    TranslateModule,
   ],
   template: `
     <form [formGroup]="form" class="p-2">
       <app-form-control>
-        <app-label>Strassentyp</app-label>
+        <app-label>{{ 'STREET_TYPE' | translate }}</app-label>
         <app-radio-contoler
           name="strassentyp"
           formControlName="strassentyp"
           [options]="streetTypOptions"
+          [translatePrefix]="'STREET_TYPE_OPTIONS'"
         />
       </app-form-control>
 
       <app-form-control>
-        <app-label>Erlaubte Geschwindigkeit</app-label>
+        <app-label>{{ 'ALLOWED_SPEED' | translate }}</app-label>
         <app-range-contoler formControlName="allowedSpeed" [max]="120" [step]="10" />
       </app-form-control>
 
       <app-form-control>
-        <app-label>Geschätzte Geschwindigkeit:</app-label>
+        <app-label>{{ 'ESTIMATED_SPEED' | translate }}</app-label>
         <app-range-contoler formControlName="netSpeed" [max]="150" />
       </app-form-control>
 
       <app-form-control>
-        <app-label>Radartype</app-label>
+        <app-label>{{ 'RADAR_TYPE' | translate }}</app-label>
         <app-radio-contoler
           name="radartyp"
           formControlName="radartyp"
           [options]="radartypeOptions"
+          [translatePrefix]="'RADAR_TYPE_OPTIONS'"
         />
       </app-form-control>
     </form>
