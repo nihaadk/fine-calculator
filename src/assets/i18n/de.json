@@ -7,7 +7,7 @@
   "NET_SPEED": "Netto-Geschwindigkeit",
   "EXCEEDING": "Überschreitung um",
   "FINE": "Bussgeld",
-  "ADMINISTRATIVE_MEASURES": "Administrativmassnahmen (bei erstmaliger Verfehlung)",
+  "ADMINISTRATIVE_MEASURES": "Administrativmassnahmen",
   "STREET_TYPE": "Strassentyp",
   "STREET_TYPE_OPTIONS": {
     "INNER_TOWN": "Innerorts",

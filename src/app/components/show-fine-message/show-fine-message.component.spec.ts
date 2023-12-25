@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlertComponent } from './alert.component';
+import { ShowFineMessageComponent } from './show-fine-message.component';
 
-describe('AlertComponent', () => {
-  let component: AlertComponent;
-  let fixture: ComponentFixture<AlertComponent>;
+describe('ShowFineMessageComponent', () => {
+  let component: ShowFineMessageComponent;
+  let fixture: ComponentFixture<ShowFineMessageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AlertComponent]
+      imports: [ShowFineMessageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AlertComponent);
+    fixture = TestBed.createComponent(ShowFineMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,13 +4,24 @@ import { Store } from '../../../+state/store';
 import { LabelComponent } from '../../form/label/label.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MeasuresMessages } from '../../../enums/measures-messages.enum';
-import { AlertComponent } from '../../alert/alert.component';
+import { AlertToggleComponent } from '../../alert/alert-toggle.component';
 import { getExceedingSpeed } from '../../../utils/store-helper';
+import { AlertWarningComponent } from '../../alert/alert-warning.component';
+import { ShowFineMessageComponent } from '../../show-fine-message/show-fine-message.component';
+import { ShowMeasureMessageComponent } from '../../show-measure-message/show-measure-message.component';
 
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [CommonModule, LabelComponent, TranslateModule, AlertComponent],
+  imports: [
+    CommonModule,
+    LabelComponent,
+    TranslateModule,
+    AlertToggleComponent,
+    AlertWarningComponent,
+    ShowFineMessageComponent,
+    ShowMeasureMessageComponent,
+  ],
   template: `
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">
@@ -41,20 +52,13 @@ import { getExceedingSpeed } from '../../../utils/store-helper';
 
         @defer (when netSpeed()) {
           <div class="flex flex-col">
-            <app-label>{{ 'FINE' | translate }}</app-label>
-            <app-alert [isError]="fineMessage() === NO_FINE">
-              {{ 'FINE_MESSAGES.' + fineMessage() | translate }}
-            </app-alert>
-
-            <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
-            <app-alert [isError]="measureMessage() === NO_CONSEQUENCES">
-              {{ 'MEASURE_MESSAGES.' + measureMessage() | translate }}
-            </app-alert>
+            <app-show-fine-message />
+            <app-show-measure-message />
           </div>
         } @placeholder {
-          <div role="alert" class="alert alert-warning">
-            <span translate>INTRODUCTION</span>
-          </div>
+          <app-alert-warning>
+            {{ 'INTRODUCTION' | translate }}
+          </app-alert-warning>
         }
       </div>
     </div>
@@ -66,11 +70,6 @@ export class ResultComponent {
   netSpeed: Signal<number> = this.#store.netSpeed;
   radarValue: Signal<number> = this.#store.radarValue;
   exceedingSpeed: Signal<number> = this.calcExceedingSpeed();
-  measureMessage: Signal<string> = this.#store.getMeasureMessage;
-  fineMessage: Signal<string> = this.#store.getFineMessage;
-
-  NO_CONSEQUENCES = MeasuresMessages.NO_CONSEQUENCES;
-  NO_FINE = MeasuresMessages.NO_FINE;
 
   private calcExceedingSpeed(): Signal<number> {
     return computed(() =>
