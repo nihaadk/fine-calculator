@@ -26,5 +26,19 @@
     "REMOVE_1_MONTH_LICENSE": "Withdrawal of driving license for at least 1 month",
     "REMOVE_3_MONTH_LICENSE": "Withdrawal of driving license for at least 3 month",
     "NO_CONSEQUENCES": "No other consequences"
+  },
+  "FINE_MESSAGES": {
+    "NO_FINE": "No Fine",
+    "FINE_20_CHF": "Fine of 20 CHF",
+    "FINE_40_CHF": "Fine of 40 CHF",
+    "FINE_60_CHF": "Fine of 60 CHF",
+    "FINE_100_CHF": "Fine of 100 CHF",
+    "FINE_120_CHF": "Fine of 120 CHF",
+    "FINE_160_CHF": "Fine of 160 CHF",
+    "FINE_180_CHF": "Fine of 180 CHF",
+    "FINE_240_CHF": "Fine of 240 CHF",
+    "FINE_250_CHF": "Fine of 250 CHF",
+    "FINE_260_CHF": "Fine of 260 CHF",
+    "POLICE_REPORT": "Police report"
   }
 }

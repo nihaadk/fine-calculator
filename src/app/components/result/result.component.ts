@@ -34,17 +34,19 @@ import { AlertComponent } from '../alert/alert.component';
           </div>
         </div>
 
-        <div class="flex flex-col">
-          <app-label>{{ 'FINE' | translate }}</app-label>
-          <div role="alert" class="alert alert-success">
-            <span>Your purchase has been confirmed!</span>
-          </div>
+        @defer (when netSpeed()) {
+          <div class="flex flex-col">
+            <app-label>{{ 'FINE' | translate }}</app-label>
+            <app-alert [isError]="fineMessage() === NO_FINE">
+              {{ 'FINE_MESSAGES.' + fineMessage() | translate }}
+            </app-alert>
 
-          <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
-          <app-alert [isError]="message() === NO_CONSEQUENCES">
-            {{ 'MEASURE_MESSAGES.' + message() | translate }}
-          </app-alert>
-        </div>
+            <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
+            <app-alert [isError]="measureMessage() === NO_CONSEQUENCES">
+              {{ 'MEASURE_MESSAGES.' + measureMessage() | translate }}
+            </app-alert>
+          </div>
+        }
       </div>
     </div>
   `,
@@ -54,7 +56,9 @@ export class ResultComponent {
   allowedSpeed: Signal<number> = this.#store.allowedSpeedComp;
   netSpeed: Signal<number> = this.#store.netSpeedComp;
   exceedingSpeed: Signal<number> = computed(() => this.netSpeed() - this.allowedSpeed());
-  message: Signal<string> = this.#store.getFineMessage;
+  measureMessage: Signal<string> = this.#store.getMeasureMessage;
+  fineMessage: Signal<string> = this.#store.getFineMessage;
 
   NO_CONSEQUENCES = MeasuresMessages.NO_CONSEQUENCES;
+  NO_FINE = MeasuresMessages.NO_FINE;
 }

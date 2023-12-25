@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, forwardRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -24,7 +24,7 @@ const RADIO_CONTROL_ACCESSOR = {
             type="radio"
             [name]="name"
             [id]="getId(option, $index)"
-            [value]="value"
+            [value]="option"
             (blur)="onBlur()"
             [checked]="isCheck(value)"
             (change)="valueChanged(option)"
@@ -39,7 +39,7 @@ const RADIO_CONTROL_ACCESSOR = {
 export class RadioControlerComponent implements ControlValueAccessor {
   @Input({ required: true }) options: string[] = [];
   @Input() translatePrefix?: string = '';
-  @Input({ required: true }) name: string = '';
+  @Input({ required: true }) name: string = 'radio-name';
 
   value: radioValueType = null;
   private onChange!: (value: radioValueType) => void;

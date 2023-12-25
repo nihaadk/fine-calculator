@@ -26,5 +26,19 @@
     "REMOVE_1_MONTH_LICENSE": "Entzug des Führerausweises mindestens für 1 Monat",
     "REMOVE_3_MONTH_LICENSE": "Entzug des Führerausweises mindestens für 3 Monat",
     "NO_CONSEQUENCES": "Keine sonstigen Konsequenzen"
+  },
+  "FINE_MESSAGES": {
+    "NO_FINE": "Keine Busse",
+    "FINE_20_CHF": "Busse von 20 CHF",
+    "FINE_40_CHF": "Busse von 40 CHF",
+    "FINE_60_CHF": "Busse von 60 CHF",
+    "FINE_100_CHF": "Busse von 100 CHF",
+    "FINE_120_CHF": "Busse von 120 CHF",
+    "FINE_160_CHF": "Busse von 160 CHF",
+    "FINE_180_CHF": "Busse von 180 CHF",
+    "FINE_240_CHF": "Busse von 240 CHF",
+    "FINE_250_CHF": "Busse von 250 CHF",
+    "FINE_260_CHF": "Busse von 260 CHF",
+    "POLICE_REPORT": "Anzeige"
   }
 }

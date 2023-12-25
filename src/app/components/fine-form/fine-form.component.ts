@@ -73,11 +73,16 @@ export class FineFormComponent implements OnInit {
   }
 
   private buildForm(): void {
+    const streetTypInitValue = this.streetTypOptions[0];
+    const radarTypInitValue = this.radartypeOptions[0];
+    const netSpeedInitValue = 0;
+    const allowedSpeedInitValue = 50;
+
     this.form = this.#formBuilder.group({
-      strassentyp: [this.streetTypOptions[0]],
-      allowedSpeed: [0],
-      netSpeed: [0],
-      radartyp: [this.streetTypOptions[0]],
+      strassentyp: [streetTypInitValue],
+      allowedSpeed: [allowedSpeedInitValue],
+      netSpeed: [netSpeedInitValue],
+      radartyp: [radarTypInitValue],
     });
   }
 
