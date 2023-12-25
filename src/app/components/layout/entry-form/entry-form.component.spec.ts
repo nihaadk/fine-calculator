@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FineFormComponent } from './fine-form.component';
+import { EntryFormComponent } from './entry-form.component';
 
 describe('FineFormComponent', () => {
-  let component: FineFormComponent;
-  let fixture: ComponentFixture<FineFormComponent>;
+  let component: EntryFormComponent;
+  let fixture: ComponentFixture<EntryFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FineFormComponent],
+      imports: [EntryFormComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FineFormComponent);
+    fixture = TestBed.createComponent(EntryFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

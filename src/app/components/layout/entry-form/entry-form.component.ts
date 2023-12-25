@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
-import { Store } from '../../+state/store';
-import { RadarType } from '../../enums/radar-type.enum';
-import { StreetType } from '../../enums/street-type.enum';
-import { OptionService } from '../../service/option.service';
-import { FormControlWrapperComponent } from '../form-control-wrapper/form-control-wrapper.component';
-import { LabelComponent } from '../label/label.component';
-import { RadioControlerComponent } from '../radio-controler/radio-controler.component';
-import { RangeControlerComponent } from '../range-controler/range-contoler.component';
+import { Store } from '../../../+state/store';
+import { RadarType } from '../../../enums/radar-type.enum';
+import { StreetType } from '../../../enums/street-type.enum';
+import { OptionService } from '../../../service/option.service';
+import { FormControlWrapperComponent } from '../../form/form-control-wrapper/form-control-wrapper.component';
+import { LabelComponent } from '../../form/label/label.component';
+import { RadioControlerComponent } from '../../form/radio-controler/radio-controler.component';
+import { RangeControlerComponent } from '../../form/range-controler/range-contoler.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-fine-form',
+  selector: 'app-entry-form',
   standalone: true,
   imports: [
     CommonModule,
@@ -57,7 +57,7 @@ import { TranslateModule } from '@ngx-translate/core';
     </form>
   `,
 })
-export class FineFormComponent implements OnInit {
+export class EntryFormComponent implements OnInit {
   form!: UntypedFormGroup;
   streetTypOptions: string[] = [];
   radartypeOptions: string[] = [];

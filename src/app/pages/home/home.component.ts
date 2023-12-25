@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { FineFormComponent } from '../../components/fine-form/fine-form.component';
-import { ResultComponent } from '../../components/result/result.component';
-import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { EntryFormComponent } from '../../components/layout/entry-form/entry-form.component';
+import { ResultComponent } from '../../components/layout/result/result.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FineFormComponent, ResultComponent, TranslateModule],
+  imports: [CommonModule, EntryFormComponent, ResultComponent, TranslateModule],
   template: `
     <div class="flex w-full">
       <div class="w-1/2">
@@ -18,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
               INPUT
             </h2>
 
-            <app-fine-form />
+            <app-entry-form />
           </div>
         </div>
       </div>

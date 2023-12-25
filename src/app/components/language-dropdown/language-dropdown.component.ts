@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DropdownControlerComponent } from '../dropdown-controler/dropdown-controler.component';
+import { DropdownControlerComponent } from '../form/dropdown-controler/dropdown-controler.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';

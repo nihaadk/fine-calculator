@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Signal, computed, inject } from '@angular/core';
-import { Store } from '../../+state/store';
-import { LabelComponent } from '../label/label.component';
+import { Store } from '../../../+state/store';
+import { LabelComponent } from '../../form/label/label.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { MeasuresMessages } from '../../enums/measures-messages.enum';
-import { AlertComponent } from '../alert/alert.component';
-import { getExceedingSpeed } from '../../utils/store-helper';
+import { MeasuresMessages } from '../../../enums/measures-messages.enum';
+import { AlertComponent } from '../../alert/alert.component';
+import { getExceedingSpeed } from '../../../utils/store-helper';
 
 @Component({
   selector: 'app-result',

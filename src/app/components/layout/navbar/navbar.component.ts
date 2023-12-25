@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ToggleThemeButtonComponent } from '../toggle-theme-button/toggle-theme-button.component';
-import { LanguageDropdownComponent } from '../language-dropdown/language-dropdown.component';
+import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-theme-button.component';
+import { LanguageDropdownComponent } from '../../language-dropdown/language-dropdown.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
