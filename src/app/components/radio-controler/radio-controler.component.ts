@@ -24,9 +24,9 @@ const RADIO_CONTROL_ACCESSOR = {
             type="radio"
             [name]="name"
             [id]="getId(option, $index)"
-            [value]="option"
+            [value]="value"
             (blur)="onBlur()"
-            [checked]="isCheck(value)"
+            [checked]="isCheck(value, option)"
             (change)="valueChanged(option)"
             class="radio checked:radio-button-color"
           />
@@ -70,8 +70,8 @@ export class RadioControlerComponent implements ControlValueAccessor {
     return `${option}-${index}`;
   }
 
-  isCheck(value: radioValueType): boolean {
-    return this.value === value;
+  isCheck(selected: radioValueType, option: radioValueType): boolean {
+    return option === selected;
   }
 
   get prefix(): string {
