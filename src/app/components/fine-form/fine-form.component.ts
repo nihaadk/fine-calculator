@@ -84,6 +84,8 @@ export class FineFormComponent implements OnInit {
       netSpeed: [netSpeedInitValue],
       radartyp: [radarTypInitValue],
     });
+
+    this.#store.updateFine(this.form.value);
   }
 
   private loadOptions(): void {
