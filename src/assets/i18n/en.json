@@ -1,5 +1,6 @@
 {
   "APP_TITLE": "Fine Calculator",
+  "INTRODUCTION": "Please enter your details in the form so that the calculation can be carried out.",
   "INPUT": "Input",
   "RESULT": "Result",
   "SAFETY_MARGIN": "Safety margin",
