@@ -1,6 +1,7 @@
 {
   "APP_TITLE": "Bussenrechner",
   "INTRODUCTION": "Bitte tragen Sie Ihre Daten in das Formular ein, damit die Berechnung durfgeführt werden kann.",
+  "COPYRIGHT": "Copyright © 2023 – Alle Rechte vorbehalten",
   "INPUT": "Eingabe",
   "RESULT": "Ergebnis",
   "SAFETY_MARGIN": "Sicherheitsmarge",

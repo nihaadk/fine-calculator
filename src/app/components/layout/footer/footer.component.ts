@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     <footer class="footer footer-center p-10 bg-base-200 text-base-content">
       <aside>
@@ -20,7 +21,7 @@ import { Component } from '@angular/core';
             /></a>
           </div>
         </div>
-        <p>Copyright © 2023 - All right reserved</p>
+        <p translate>COPYRIGHT</p>
       </aside>
     </footer>
   `,
