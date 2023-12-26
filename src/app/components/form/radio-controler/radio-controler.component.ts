@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, Input, forwardRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -18,7 +18,7 @@ const RADIO_CONTROL_ACCESSOR = {
   template: `
     @for (option of options; track $index) {
       <div class="form-control">
-        <label class="label cursor-pointer">
+        <label [for]="getId(option, $index)" class="label cursor-pointer">
           <span class="lsabel-text" translate>{{ prefix + option }}</span>
           <input
             type="radio"
@@ -37,6 +37,7 @@ const RADIO_CONTROL_ACCESSOR = {
   providers: [RADIO_CONTROL_ACCESSOR],
 })
 export class RadioControlerComponent implements ControlValueAccessor {
+  @Input() id!: string;
   @Input({ required: true }) options: string[] = [];
   @Input() translatePrefix?: string = '';
   @Input({ required: true }) name: string = 'radio-name';
@@ -67,6 +68,9 @@ export class RadioControlerComponent implements ControlValueAccessor {
   }
 
   getId(option: string, index: number): string {
+    if (this.id) {
+      return `${this.id}-${option}-${index}`;
+    }
     return `${option}-${index}`;
   }
 

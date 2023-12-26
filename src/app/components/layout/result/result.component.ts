@@ -30,19 +30,19 @@ import { ShowMeasureMessageComponent } from '../../show-measure-message/show-mea
 
         <div class="stats stats-vertical lg:stats-horizontal my-5">
           <div class="stat place-items-center">
-            <div class="stat-title" translate>SAFETY_MARGIN</div>
+            <div class="stat-title info-content" translate>SAFETY_MARGIN</div>
             <div class="stat-value">
               {{ allowedSpeed() }} <span class="text-base">km/h</span>
             </div>
           </div>
 
           <div class="stat place-items-center">
-            <div class="stat-title" translate>NET_SPEED</div>
+            <div class="stat-title info-content" translate>NET_SPEED</div>
             <div class="stat-value">{{ netSpeed() }} <span class="text-base">km/h</span></div>
           </div>
 
           <div class="stat place-items-center">
-            <div class="stat-title" translate>EXCEEDING</div>
+            <div class="stat-title info-content" translate>EXCEEDING</div>
             <div class="stat-value">
               {{ exceedingSpeed() }} <span class="text-base">km/h</span>
             </div>

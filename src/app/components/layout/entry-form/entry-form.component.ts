@@ -28,8 +28,9 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
   template: `
     <form [formGroup]="form" class="p-2">
       <app-form-control>
-        <app-label>{{ 'STREET_TYPE' | translate }}</app-label>
+        <app-label for="streetTyp">{{ 'STREET_TYPE' | translate }}</app-label>
         <app-radio-contoler
+          id="streetTyp"
           name="streetTyp"
           formControlName="streetTyp"
           [options]="streetTypOptions"
@@ -38,18 +39,24 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
       </app-form-control>
 
       <app-form-control>
-        <app-label>{{ 'ALLOWED_SPEED' | translate }}</app-label>
-        <app-range-contoler formControlName="allowedSpeed" [max]="120" [step]="10" />
+        <app-label for="allowedSpeed">{{ 'ALLOWED_SPEED' | translate }}</app-label>
+        <app-range-contoler
+          id="allowedSpeed"
+          formControlName="allowedSpeed"
+          [max]="120"
+          [step]="10"
+        />
       </app-form-control>
 
       <app-form-control>
-        <app-label>{{ 'ESTIMATED_SPEED' | translate }}</app-label>
-        <app-range-contoler formControlName="netSpeed" [max]="150" />
+        <app-label for="netSpeed">{{ 'ESTIMATED_SPEED' | translate }}</app-label>
+        <app-range-contoler id="netSpeed" formControlName="netSpeed" [max]="150" />
       </app-form-control>
 
       <app-form-control>
-        <app-label>{{ 'RADAR_TYPE' | translate }}</app-label>
+        <app-label for="radarTyp">{{ 'RADAR_TYPE' | translate }}</app-label>
         <app-radio-contoler
+          id="radarTyp"
           name="radarTyp"
           formControlName="radarTyp"
           [options]="radarTypeOptions"

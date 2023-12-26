@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-label',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <label class="label">
+    <label class="label" [htmlFor]="for">
       <span class="label-text text-xl py-2">
         <ng-content />
       </span>
@@ -14,4 +14,6 @@ import { CommonModule } from '@angular/common';
   `,
   styles: ``,
 })
-export class LabelComponent {}
+export class LabelComponent {
+  @Input() for!: string;
+}
