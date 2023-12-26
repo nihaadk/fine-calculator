@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Signal, computed, inject } from '@angular/core';
-import { Store } from '../../../+state/store';
-import { LabelComponent } from '../../form/label/label.component';
+import { Component, Signal, computed, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { MeasuresMessages } from '../../../enums/measures-messages.enum';
-import { AlertToggleComponent } from '../../alert/alert-toggle.component';
+import { Store } from '../../../+state/store';
 import { getExceedingSpeed } from '../../../utils/store-helper';
+import { AlertToggleComponent } from '../../alert/alert-toggle.component';
 import { AlertWarningComponent } from '../../alert/alert-warning.component';
+import { LabelComponent } from '../../form/label/label.component';
 import { ShowFineMessageComponent } from '../../show-fine-message/show-fine-message.component';
 import { ShowMeasureMessageComponent } from '../../show-measure-message/show-measure-message.component';
 

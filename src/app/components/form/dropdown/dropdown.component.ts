@@ -1,19 +1,15 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  SelectControlValueAccessor,
-} from '@angular/forms';
+import { NG_VALUE_ACCESSOR, SelectControlValueAccessor } from '@angular/forms';
 
 const SELECT_CONTROL_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => DropdownControlerComponent),
+  useExisting: forwardRef(() => DropdownComponent),
   multi: true,
 };
 
 @Component({
-  selector: 'app-dropdown-controler',
+  selector: 'app-dropdown',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -27,6 +23,6 @@ const SELECT_CONTROL_ACCESSOR = {
   `,
   providers: [SELECT_CONTROL_ACCESSOR],
 })
-export class DropdownControlerComponent extends SelectControlValueAccessor {
+export class DropdownComponent extends SelectControlValueAccessor {
   @Input({ required: true }) options: string[] = [];
 }

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DropdownControlerComponent } from '../form/dropdown-controler/dropdown-controler.component';
+import { DropdownComponent } from '../form/dropdown/dropdown.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,8 +11,8 @@ import { defaultLanguage } from '../../config/translate.config';
 @Component({
   selector: 'app-language-dropdown',
   standalone: true,
-  imports: [CommonModule, DropdownControlerComponent, ReactiveFormsModule],
-  template: ` <app-dropdown-controler [formControl]="control" [options]="languages" /> `,
+  imports: [CommonModule, DropdownComponent, ReactiveFormsModule],
+  template: ` <app-dropdown [formControl]="control" [options]="languages" /> `,
 })
 export class LanguageDropdownComponent implements OnInit, OnDestroy {
   #translateService: TranslateService = inject(TranslateService);
