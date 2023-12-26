@@ -51,7 +51,7 @@ export const FINE_CATALOG_STATE: ICatalog[] = [
     ],
   },
   {
-    type: StreetType.INNER_TOWN,
+    type: StreetType.OUT_OF_TOWN,
     measures: [
       {
         message: FinePrice.FINE_40_CHF,
@@ -98,7 +98,7 @@ export const FINE_CATALOG_STATE: ICatalog[] = [
     ],
   },
   {
-    type: StreetType.INNER_TOWN,
+    type: StreetType.HIGHWAY,
     measures: [
       {
         message: FinePrice.FINE_20_CHF,
