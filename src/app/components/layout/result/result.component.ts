@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Signal, computed, inject } from '@angular/core';
+import { Component, Signal, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
-import { getExceedingSpeed } from '../../../utils/store-helper';
-import { AlertToggleComponent } from '../../alert/alert-toggle.component';
 import { AlertWarningComponent } from '../../alert/alert-warning.component';
-import { LabelComponent } from '../../form/label/label.component';
+import { CalculationStateComponent } from '../../calculation-state/calculation-state.component';
 import { ShowFineMessageComponent } from '../../show-fine-message/show-fine-message.component';
 import { ShowMeasureMessageComponent } from '../../show-measure-message/show-measure-message.component';
 
@@ -14,12 +12,11 @@ import { ShowMeasureMessageComponent } from '../../show-measure-message/show-mea
   standalone: true,
   imports: [
     CommonModule,
-    LabelComponent,
     TranslateModule,
-    AlertToggleComponent,
     AlertWarningComponent,
     ShowFineMessageComponent,
     ShowMeasureMessageComponent,
+    CalculationStateComponent,
   ],
   template: `
     <div class="card bg-base-100 shadow-xl">
@@ -28,26 +25,7 @@ import { ShowMeasureMessageComponent } from '../../show-measure-message/show-mea
           RESULT
         </h2>
 
-        <div class="stats stats-vertical lg:stats-horizontal my-5">
-          <div class="stat place-items-center">
-            <div class="stat-title info-content" translate>SAFETY_MARGIN</div>
-            <div class="stat-value">
-              {{ allowedSpeed() }} <span class="text-base">km/h</span>
-            </div>
-          </div>
-
-          <div class="stat place-items-center">
-            <div class="stat-title info-content" translate>NET_SPEED</div>
-            <div class="stat-value">{{ netSpeed() }} <span class="text-base">km/h</span></div>
-          </div>
-
-          <div class="stat place-items-center">
-            <div class="stat-title info-content" translate>EXCEEDING</div>
-            <div class="stat-value">
-              {{ exceedingSpeed() }} <span class="text-base">km/h</span>
-            </div>
-          </div>
-        </div>
+        <app-calculation-state />
 
         @defer (when netSpeed()) {
           <div class="flex flex-col">
@@ -68,11 +46,4 @@ export class ResultComponent {
   allowedSpeed: Signal<number | null> = this.#store.allowedSpeed;
   netSpeed: Signal<number | null> = this.#store.netSpeed;
   radarValue: Signal<number> = this.#store.radarValue;
-  exceedingSpeed: Signal<number> = this.calcExceedingSpeed();
-
-  private calcExceedingSpeed(): Signal<number> {
-    return computed(() =>
-      getExceedingSpeed(this.netSpeed(), this.allowedSpeed(), this.radarValue()),
-    );
-  }
 }

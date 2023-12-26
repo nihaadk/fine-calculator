@@ -42,5 +42,9 @@
     "FINE_250_CHF": "Fine of 250 CHF",
     "FINE_260_CHF": "Fine of 260 CHF",
     "POLICE_REPORT": "Police report"
+  },
+  "LANGUAGE": {
+    "DE": "German",
+    "EN": "English"
   }
 }

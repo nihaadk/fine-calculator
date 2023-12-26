@@ -42,5 +42,9 @@
     "FINE_250_CHF": "Busse von 250 CHF",
     "FINE_260_CHF": "Busse von 260 CHF",
     "POLICE_REPORT": "Anzeige"
+  },
+  "LANGUAGE": {
+    "DE": "Deutsch",
+    "EN": "Englisch"
   }
 }

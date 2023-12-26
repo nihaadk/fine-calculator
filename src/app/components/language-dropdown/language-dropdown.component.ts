@@ -1,18 +1,20 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DropdownComponent } from '../form/dropdown/dropdown.component';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { defaultLanguage } from '../../config/translate.config';
 import { Language } from '../../enums/language.enum';
 import { OptionService } from '../../service/option.service';
-import { defaultLanguage } from '../../config/translate.config';
+import { DropdownComponent } from '../form/dropdown/dropdown.component';
 
 @Component({
   selector: 'app-language-dropdown',
   standalone: true,
   imports: [CommonModule, DropdownComponent, ReactiveFormsModule],
-  template: ` <app-dropdown [formControl]="control" [options]="languages" /> `,
+  template: `
+    <app-dropdown [prefix]="'LANGUAGE'" [formControl]="control" [options]="languages" />
+  `,
 })
 export class LanguageDropdownComponent implements OnInit, OnDestroy {
   #translateService: TranslateService = inject(TranslateService);
@@ -45,10 +47,10 @@ export class LanguageDropdownComponent implements OnInit, OnDestroy {
   }
 
   private changeLanguage(language: Language): void {
-    this.#translateService.use(language);
+    this.#translateService.use(language.toLowerCase());
   }
 
   private get currentLang(): string {
-    return this.#translateService.currentLang;
+    return this.#translateService.currentLang.toUpperCase();
   }
 }
