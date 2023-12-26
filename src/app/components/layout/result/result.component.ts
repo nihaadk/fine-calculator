@@ -4,8 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
 import { AlertWarningComponent } from '../../alert/alert-warning.component';
 import { CalculationStateComponent } from '../../calculation-state/calculation-state.component';
-import { ShowFineMessageComponent } from '../../show-fine-message/show-fine-message.component';
-import { ShowMeasureMessageComponent } from '../../show-measure-message/show-measure-message.component';
+import { FineMessageComponent } from '../../fine-message/fine-message.component';
+import { MeasureMessageComponent } from '../../measure-message/measure-message.component';
 
 @Component({
   selector: 'app-result',
@@ -14,8 +14,8 @@ import { ShowMeasureMessageComponent } from '../../show-measure-message/show-mea
     CommonModule,
     TranslateModule,
     AlertWarningComponent,
-    ShowFineMessageComponent,
-    ShowMeasureMessageComponent,
+    FineMessageComponent,
+    MeasureMessageComponent,
     CalculationStateComponent,
   ],
   template: `
@@ -29,8 +29,8 @@ import { ShowMeasureMessageComponent } from '../../show-measure-message/show-mea
 
         @defer (when netSpeed()) {
           <div class="flex flex-col">
-            <app-show-fine-message />
-            <app-show-measure-message />
+            <app-fine-message />
+            <app-measure-message />
           </div>
         } @placeholder {
           <app-alert-warning>

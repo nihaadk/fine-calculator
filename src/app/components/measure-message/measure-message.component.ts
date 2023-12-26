@@ -1,14 +1,14 @@
-import { Component, Signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Signal, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { Store } from '../../+state/store';
+import { MeasuresMessages } from '../../enums/measures-messages.enum';
 import { AlertErrorComponent } from '../alert/alert-error.component';
 import { AlertSuccessComponent } from '../alert/alert-success.component';
 import { LabelComponent } from '../form/label/label.component';
-import { Store } from '../../+state/store';
-import { MeasuresMessages } from '../../enums/measures-messages.enum';
 
 @Component({
-  selector: 'app-show-measure-message',
+  selector: 'app-measure-message',
   standalone: true,
   imports: [
     CommonModule,
@@ -30,7 +30,7 @@ import { MeasuresMessages } from '../../enums/measures-messages.enum';
     }
   `,
 })
-export class ShowMeasureMessageComponent {
+export class MeasureMessageComponent {
   NO_CONSEQUENCES = MeasuresMessages.NO_CONSEQUENCES;
 
   #store = inject(Store);
