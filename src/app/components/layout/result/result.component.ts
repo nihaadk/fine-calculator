@@ -65,8 +65,8 @@ import { ShowMeasureMessageComponent } from '../../show-measure-message/show-mea
 })
 export class ResultComponent {
   #store = inject(Store);
-  allowedSpeed: Signal<number> = this.#store.allowedSpeed;
-  netSpeed: Signal<number> = this.#store.netSpeed;
+  allowedSpeed: Signal<number | null> = this.#store.allowedSpeed;
+  netSpeed: Signal<number | null> = this.#store.netSpeed;
   radarValue: Signal<number> = this.#store.radarValue;
   exceedingSpeed: Signal<number> = this.calcExceedingSpeed();
 

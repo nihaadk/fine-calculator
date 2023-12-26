@@ -1,15 +1,15 @@
 import { Theme } from '../enums/theme.enum';
-import { Fine } from '../interfaces/fine.interfaces';
+import { IStore } from '../interfaces/store.inteface';
 import { FINE_CATALOG_STATE } from './fine-catalog.state';
 import { MEASURE_CATALOG_STATE } from './measures-catalog.state';
 
-export const initiState = {
+export const initiState: IStore = {
   fine: {
-    strassentyp: '',
+    streetTyp: null,
     allowedSpeed: 0,
     netSpeed: 0,
-    radartyp: '',
-  } as Fine,
+    radarTyp: null,
+  },
   theme: Theme.LIGHT,
   measureCatalog: MEASURE_CATALOG_STATE,
   fineCatalog: FINE_CATALOG_STATE,

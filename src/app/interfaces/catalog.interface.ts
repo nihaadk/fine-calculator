@@ -1,7 +1,7 @@
 import { StreetType } from '../enums/street-type.enum';
-import { Measure } from './measure.interface';
+import { IMeasure } from './measure.interface';
 
-export interface Catalog {
+export interface ICatalog {
   type: StreetType;
-  measures: Measure[];
+  measures: IMeasure[];
 }

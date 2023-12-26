@@ -1,4 +1,4 @@
-export interface Speed {
+export interface ISpeed {
   from: number;
   to: number;
 }

@@ -1,6 +1,6 @@
-import { Speed } from './speed.interface';
+import { ISpeed } from './speed.interface';
 
-export interface Measure {
+export interface IMeasure {
   message: string;
-  speed: Speed;
+  speed: ISpeed;
 }

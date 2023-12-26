@@ -1,8 +1,8 @@
 import { MeasuresMessages } from '../enums/measures-messages.enum';
 import { StreetType } from '../enums/street-type.enum';
-import { Catalog } from '../interfaces/catalog.interface';
+import { ICatalog } from '../interfaces/catalog.interface';
 
-export const MEASURE_CATALOG_STATE: Catalog[] = [
+export const MEASURE_CATALOG_STATE: ICatalog[] = [
   {
     type: StreetType.INNER_TOWN,
     measures: [

@@ -1,9 +1,8 @@
 import { FinePrice } from '../enums/fine-price.enum';
-import { MeasuresMessages } from '../enums/measures-messages.enum';
 import { StreetType } from '../enums/street-type.enum';
-import { Catalog } from '../interfaces/catalog.interface';
+import { ICatalog } from '../interfaces/catalog.interface';
 
-export const FINE_CATALOG_STATE: Catalog[] = [
+export const FINE_CATALOG_STATE: ICatalog[] = [
   {
     type: StreetType.INNER_TOWN,
     measures: [

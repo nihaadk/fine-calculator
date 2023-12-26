@@ -1,10 +1,6 @@
-import { Catalog } from './catalog.interface';
-
-export interface Fine {
-  strassentyp: string;
-  allowedSpeed: number;
-  netSpeed: number;
-  radartyp: string;
-  mesaureCatalog: Catalog[];
-  fineCatalog: Catalog[];
+export interface IFine {
+  streetTyp: string | null;
+  allowedSpeed: number | null;
+  netSpeed: number | null;
+  radarTyp: string | null;
 }

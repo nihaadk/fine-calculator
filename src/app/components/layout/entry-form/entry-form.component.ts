@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
 import { RadarType } from '../../../enums/radar-type.enum';
 import { StreetType } from '../../../enums/street-type.enum';
+import { IEntryForm } from '../../../interfaces/entry-form.interface';
+import { IFine } from '../../../interfaces/fine.interfaces';
 import { OptionService } from '../../../service/option.service';
 import { FormControlWrapperComponent } from '../../form/form-control-wrapper/form-control-wrapper.component';
 import { LabelComponent } from '../../form/label/label.component';
 import { RadioControlerComponent } from '../../form/radio-controler/radio-controler.component';
 import { RangeControlerComponent } from '../../form/range-controler/range-contoler.component';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-entry-form',
@@ -28,8 +30,8 @@ import { TranslateModule } from '@ngx-translate/core';
       <app-form-control>
         <app-label>{{ 'STREET_TYPE' | translate }}</app-label>
         <app-radio-contoler
-          name="strassentyp"
-          formControlName="strassentyp"
+          name="streetTyp"
+          formControlName="streetTyp"
           [options]="streetTypOptions"
           [translatePrefix]="'STREET_TYPE_OPTIONS'"
         />
@@ -48,9 +50,9 @@ import { TranslateModule } from '@ngx-translate/core';
       <app-form-control>
         <app-label>{{ 'RADAR_TYPE' | translate }}</app-label>
         <app-radio-contoler
-          name="radartyp"
-          formControlName="radartyp"
-          [options]="radartypeOptions"
+          name="radarTyp"
+          formControlName="radarTyp"
+          [options]="radarTypeOptions"
           [translatePrefix]="'RADAR_TYPE_OPTIONS'"
         />
       </app-form-control>
@@ -58,9 +60,9 @@ import { TranslateModule } from '@ngx-translate/core';
   `,
 })
 export class EntryFormComponent implements OnInit {
-  form!: UntypedFormGroup;
+  form!: FormGroup<IEntryForm>;
   streetTypOptions: string[] = [];
-  radartypeOptions: string[] = [];
+  radarTypeOptions: string[] = [];
 
   #formBuilder = inject(FormBuilder);
   #optionService = inject(OptionService);
@@ -73,27 +75,28 @@ export class EntryFormComponent implements OnInit {
   }
 
   private buildForm(): void {
-    const streetTypInitValue = this.streetTypOptions[0];
-    const radarTypInitValue = this.radartypeOptions[0];
-    const netSpeedInitValue = 0;
-    const allowedSpeedInitValue = 50;
-
-    this.form = this.#formBuilder.group({
-      strassentyp: [streetTypInitValue],
-      allowedSpeed: [allowedSpeedInitValue],
-      netSpeed: [netSpeedInitValue],
-      radartyp: [radarTypInitValue],
+    this.form = this.#formBuilder.group<IEntryForm>({
+      allowedSpeed: this.#formBuilder.control<number>(50),
+      netSpeed: this.#formBuilder.control<number>(0),
+      streetTyp: this.#formBuilder.control<string>(StreetType.INNER_TOWN.toString()),
+      radarTyp: this.#formBuilder.control<string>(RadarType.LASER_FIX.toString()),
     });
 
-    this.#store.updateFine(this.form.value);
+    this.updateStore(this.form.value as IFine);
   }
 
   private loadOptions(): void {
     this.streetTypOptions = this.#optionService.getOptions(StreetType);
-    this.radartypeOptions = this.#optionService.getOptions(RadarType);
+    this.radarTypeOptions = this.#optionService.getOptions(RadarType);
   }
 
   private subscribeForm(): void {
-    this.form.valueChanges.subscribe(value => this.#store.updateFine(value));
+    this.form.valueChanges.subscribe(value => {
+      this.updateStore(value as IFine);
+    });
+  }
+
+  private updateStore(newFine: IFine): void {
+    this.#store.updateFine(newFine);
   }
 }
