@@ -16,11 +16,13 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
   template: `
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <span
-          class="text-sm md:text-2xl text-primary font-bold font-mono cursor-default"
-          translate
-          >APP_TITLE</span
-        >
+        <div class="w-16 md:w-28 rounded">
+          <img
+            src="assets/img/blitzer-logo.svg"
+            alt="app-logo"
+            title="{{ 'APP_TITLE' | translate }}"
+          />
+        </div>
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">

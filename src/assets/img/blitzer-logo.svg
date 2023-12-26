@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="401px" viewBox="0 0 500 401" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>vr3@2x</title>
+    <g id="vr3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="none" x="0" y="0" width="500" height="401"></rect>
+        <path d="M337,36 C371.793939,36 400,64.2060608 400,99 L400,273 C400,307.793939 371.793939,336 337,336 L163,336 C128.206061,336 100,307.793939 100,273 L100,99 C100,64.2060608 128.206061,36 163,36 L337,36 Z M250.5,79 C191.681674,79 144,126.681674 144,185.5 C144,244.318326 191.681674,292 250.5,292 C309.318326,292 357,244.318326 357,185.5 C357,126.681674 309.318326,79 250.5,79 Z" id="Combined-Shape" fill="#FF5761"></path>
+        <line x1="425.946976" y1="149.46315" x2="454.157006" y2="137.633113" id="Path-3" stroke="#000000" stroke-width="25" fill="#FF5761" stroke-linecap="round"></line>
+        <line x1="425.946976" y1="239.46315" x2="454.157006" y2="227.633113" id="Path-3" stroke="#000000" stroke-width="25" fill="#FF5761" stroke-linecap="round" transform="translate(440.051991, 233.548131) scale(1, -1) translate(-440.051991, -233.548131) "></line>
+        <line x1="425.946976" y1="149.46315" x2="454.157006" y2="137.633113" id="Path-3" stroke="#FF5761" stroke-width="25" fill="#FF5761" stroke-linecap="round"></line>
+        <line x1="425.946976" y1="239.46315" x2="454.157006" y2="227.633113" id="Path-3" stroke="#FF5761" stroke-width="25" fill="#FF5761" stroke-linecap="round" transform="translate(440.051991, 233.548131) scale(1, -1) translate(-440.051991, -233.548131) "></line>
+        <line x1="174.5" y1="363.5" x2="324.5" y2="363.5" id="Path-3" stroke="#FF5761" stroke-width="25" fill="#FF5761" stroke-linecap="round"></line>
+        <line x1="45.9469755" y1="137.46315" x2="74.1570058" y2="125.633113" id="Path-3" stroke="#000000" stroke-width="25" fill="#FF5761" stroke-linecap="round" transform="translate(60.051991, 131.548131) scale(-1, 1) translate(-60.051991, -131.548131) "></line>
+        <line x1="45.9469755" y1="227.46315" x2="74.1570058" y2="215.633113" id="Path-3" stroke="#000000" stroke-width="25" fill="#FF5761" stroke-linecap="round" transform="translate(60.051991, 221.548131) scale(-1, -1) translate(-60.051991, -221.548131) "></line>
+        <line x1="45.9469755" y1="137.46315" x2="74.1570058" y2="125.633113" id="Path-3" stroke="#FF5761" stroke-width="25" fill="#FF5761" stroke-linecap="round" transform="translate(60.051991, 131.548131) scale(-1, 1) translate(-60.051991, -131.548131) "></line>
+        <line x1="45.9469755" y1="227.46315" x2="74.1570058" y2="215.633113" id="Path-3" stroke="#FF5761" stroke-width="25" fill="#FF5761" stroke-linecap="round" transform="translate(60.051991, 221.548131) scale(-1, -1) translate(-60.051991, -221.548131) "></line>
+        <path d="M269,116 L269,166.999 L320,167 L320,204 L269,204 L269,255 L232,255 L232,204 L181,204 L181,167 L232,167 L232,116 L269,116 Z" id="Combined-Shape" fill="#FF5761"></path>
+    </g>
+</svg>
