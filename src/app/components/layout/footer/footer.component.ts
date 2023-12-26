@@ -11,12 +11,12 @@ import { Component } from '@angular/core';
         <div class="grid grid-flow-col gap-4">
           <div class="w-14">
             <a target="_blank" href="https://angular.dev">
-              <img src="assets/img/angular-logo.png" />
+              <img alt="angular-logo" src="assets/img/angular-logo.webp" />
             </a>
           </div>
           <div class="w-14">
             <a target="_blank" href="https://daisyui.com"
-              ><img src="assets/img/daisyui-logo.svg"
+              ><img alt="daisyui-logo" src="assets/img/daisyui-logo.webp"
             /></a>
           </div>
         </div>

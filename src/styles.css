@@ -3,9 +3,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@layer base {
-}
-
 @layer components {
   .radio-button-color {
     @apply radio-primary;
@@ -14,7 +11,4 @@
   .range-input-color {
     @apply range-primary;
   }
-}
-
-@layer utilities {
 }
