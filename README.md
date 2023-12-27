@@ -1,13 +1,17 @@
-# FineCalculator
+![Logo](https://fine-calculator.vercel.app/assets/img/blitzer-logo.svg)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+# Fine Calculator
 
-## Tasks:
+This is a fine calculator designed for Switzerland. The application was developed using Angular 17 and DaisyUI. In the application, an effort was made to leverage the latest features of Angular 17. The state management was implemented using SignalStore.
 
-    1. Create an application structure.
-    2. Develop the form using typed forms.
-    3. Create a custom form control for each form.
-    4. Display the calculations in a simple table.
-    5. Utilize the SignalStore.
-    6. Implement the calculations in the service.
-    7. Add ngx-translate
+## Angular feature:
+
+- Required input
+- Reactive Forms Typed Forms
+- Standalone Components
+- Signal / SignalStore
+- New Control Flows
+
+## Demo
+
+https://fine-calculator.vercel.app
