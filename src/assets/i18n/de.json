@@ -46,5 +46,10 @@
   "LANGUAGE": {
     "DE": "Deutsch",
     "EN": "Englisch"
+  },
+  "WARNING_DAILOG": {
+    "ACCEPT": "Akzeptieren",
+    "TITLE": "Wichtige Information zur Verwendung der Applikation",
+    "MESSAGE": "Wir möchten Sie darauf aufmerksam machen, dass die Applikation ausschließlich zu Testzwecken vorgesehen ist und NICHT für den Einsatz in Produktionsumgebungen geeignet ist. Diese Version befindet sich noch in der Entwicklungsphase und unterliegt möglicherweise Unregelmäßigkeiten, Fehlern oder nicht behobenen Sicherheitsrisiken."
   }
 }
