@@ -46,10 +46,5 @@
   "LANGUAGE": {
     "DE": "German",
     "EN": "English"
-  },
-  "WARNING_DAILOG": {
-    "ACCEPT": "Accept",
-    "TITLE": "Important information about using the application",
-    "MESSAGE": "We would like to draw your attention to the fact that the application is intended exclusively for testing purposes and is NOT suitable for use in production environments. This release is still in development and may be subject to irregularities, bugs, or unresolved security vulnerabilities."
   }
 }
