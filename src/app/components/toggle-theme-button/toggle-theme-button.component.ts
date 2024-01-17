@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Signal, inject } from '@angular/core';
-import { Theme } from '../../enums/theme.enum';
-import { ThemeService } from '../../service/theme.service';
+import { Component, inject } from '@angular/core';
+import { Store } from '../../+state/store';
 
 @Component({
   selector: 'app-toggle-theme-button',
@@ -28,7 +27,7 @@ import { ThemeService } from '../../service/theme.service';
         </svg>
         <input
           type="checkbox"
-          [checked]="theme() === 'dark'"
+          [checked]="isDarkTheme()"
           (change)="toggleTheme()"
           class="toggle theme-controller"
         />
@@ -51,10 +50,14 @@ import { ThemeService } from '../../service/theme.service';
   styles: ``,
 })
 export class ToggleThemeButtonComponent {
-  #themeService = inject(ThemeService);
-  theme: Signal<Theme> = this.#themeService.currentTheme;
+  readonly #store = inject(Store);
+
 
   toggleTheme(): void {
-    this.#themeService.toggleTheme();
+    this.#store.toggleTheme();
+  }
+
+  isDarkTheme(): boolean {
+    return this.#store.isDarkTheme();
   }
 }

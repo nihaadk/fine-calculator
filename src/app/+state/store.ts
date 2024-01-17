@@ -9,12 +9,14 @@ import {
   getRadarValue,
 } from '../utils/store-helper';
 import { initiState } from './init.state';
+import { withThemeState } from './theme.store';
 
 export const NO_CONSEQUENCES = MeasuresMessages.NO_CONSEQUENCES;
 export const NO_FINE = MeasuresMessages.NO_FINE;
 
 export const Store = signalStore(
   { providedIn: 'root' },
+  withThemeState(),
   withState(initiState),
   withComputed(({ fine, measureCatalog, fineCatalog }) => ({
     netSpeed: computed(() => fine().netSpeed),
@@ -24,10 +26,10 @@ export const Store = signalStore(
       fine().netSpeed === 0
         ? 0
         : getExceedingSpeed(
-            fine().netSpeed,
-            fine().allowedSpeed,
-            getRadarValue(fine().radarTyp),
-          ),
+          fine().netSpeed,
+          fine().allowedSpeed,
+          getRadarValue(fine().radarTyp),
+        ),
     ),
     getMeasureMessage: computed(() => getMessage(fine(), measureCatalog(), NO_CONSEQUENCES)),
     getFineMessage: computed(() => getMessage(fine(), fineCatalog(), NO_FINE)),
