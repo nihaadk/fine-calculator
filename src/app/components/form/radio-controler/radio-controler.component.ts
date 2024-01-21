@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -16,13 +16,13 @@ const RADIO_CONTROL_ACCESSOR = {
   standalone: true,
   imports: [CommonModule, TranslateModule],
   template: `
-    @for (option of options; track $index) {
+    @for (option of options(); track $index) {
       <div class="form-control">
         <label [for]="getId(option, $index)" class="label cursor-pointer">
           <span class="lsabel-text" translate>{{ prefix + option }}</span>
           <input
             type="radio"
-            [name]="name"
+            [name]="name()"
             [id]="getId(option, $index)"
             [value]="value"
             (blur)="onBlur()"
@@ -37,10 +37,10 @@ const RADIO_CONTROL_ACCESSOR = {
   providers: [RADIO_CONTROL_ACCESSOR],
 })
 export class RadioControlerComponent implements ControlValueAccessor {
-  @Input() id!: string;
-  @Input({ required: true }) options: string[] = [];
-  @Input() translatePrefix?: string = '';
-  @Input({ required: true }) name: string = 'radio-name';
+  id = input<string>();
+  options = input.required<string[]>();
+  translatePrefix = input<string>('');
+  name = input<string>('radio-name');
 
   value: radioValueType = null;
   private onChange!: (value: radioValueType) => void;
@@ -68,8 +68,8 @@ export class RadioControlerComponent implements ControlValueAccessor {
   }
 
   getId(option: string, index: number): string {
-    if (this.id) {
-      return `${this.id}-${option}-${index}`;
+    if (this.id()) {
+      return `${this.id()}-${option}-${index}`;
     }
     return `${option}-${index}`;
   }
@@ -79,6 +79,6 @@ export class RadioControlerComponent implements ControlValueAccessor {
   }
 
   get prefix(): string {
-    return this.translatePrefix ? `${this.translatePrefix}.` : 'RADIO.';
+    return this.translatePrefix() ? `${this.translatePrefix()}.` : 'RADIO.';
   }
 }
