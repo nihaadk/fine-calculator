@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlertSuccessComponent } from './alert-success.component';
+import { Component, input } from '@angular/core';
 import { AlertErrorComponent } from './alert-error.component';
+import { AlertSuccessComponent } from './alert-success.component';
 
 @Component({
   selector: 'app-alert-toggle',
   standalone: true,
   imports: [CommonModule, AlertSuccessComponent, AlertErrorComponent],
   template: `
-    @if (isError) {
+    @if (isError()) {
       <app-alert-success>
         <ng-content />
       </app-alert-success>
@@ -20,5 +20,5 @@ import { AlertErrorComponent } from './alert-error.component';
   `,
 })
 export class AlertToggleComponent {
-  @Input() isError: boolean = false;
+  isError = input<boolean>(false);
 }

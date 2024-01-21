@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 type rangeValueType = number | null;
@@ -17,10 +17,10 @@ const RANGE_CONTROL_ACCESSOR = {
   template: `
     <p>
       <input
-        [id]="id"
-        [min]="min"
-        [max]="max"
-        [step]="step"
+        [id]="id()"
+        [min]="min()"
+        [max]="max()"
+        [step]="step()"
         [value]="value"
         type="range"
         class="range range-input-color"
@@ -36,10 +36,10 @@ const RANGE_CONTROL_ACCESSOR = {
   providers: [RANGE_CONTROL_ACCESSOR],
 })
 export class RangeControlerComponent implements ControlValueAccessor {
-  @Input() id!: string;
-  @Input() min: number = 0;
-  @Input() max: number = 100;
-  @Input() step: number = 1;
+  id = input.required<string>();
+  min = input<number>(0);
+  max = input<number>(100);
+  step = input<number>(1);
 
   value: rangeValueType = 0;
 
