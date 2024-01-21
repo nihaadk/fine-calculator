@@ -6,7 +6,7 @@ This is a fine calculator designed for Switzerland. The application was develope
 
 ## Angular feature:
 
-- Required input
+- Input Signal Functions
 - Reactive Forms Typed Forms
 - Standalone Components
 - Signal / SignalStore
