@@ -1,0 +1,39 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm run test
+
+      - name: Run code linting
+        run: npm run lint
+
+      - name: Deploy to Vercel (if successful)
+        if: ${{ success() }}
+        uses: vercel/vercel-action@v2
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Store Vercel token as a secret in GitHub settings
+          vercel-org: ${{ secrets.VERCEL_ORG }} # Optional: Organization if using teams
+          vercel-project: ${{ secrets.VERCEL_PROJECT_ID }} # Project ID from Vercel
+          vercel-args: '--prod' # Deploy to production branch
