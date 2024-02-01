@@ -28,12 +28,3 @@ jobs:
 
       - name: Run code linting
         run: npm run lint
-
-      - name: Deploy to Vercel (if successful)
-        if: ${{ success() }}
-        uses: vercel/vercel-action@v2
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Store Vercel token as a secret in GitHub settings
-          vercel-org: ${{ secrets.VERCEL_ORG }} # Optional: Organization if using teams
-          vercel-project: ${{ secrets.VERCEL_PROJECT_ID }} # Project ID from Vercel
-          vercel-args: '--prod' # Deploy to production branch
