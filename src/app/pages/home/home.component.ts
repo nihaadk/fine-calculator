@@ -5,10 +5,9 @@ import { EntryFormComponent } from '../../components/layout/entry-form/entry-for
 import { ResultComponent } from '../../components/layout/result/result.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, EntryFormComponent, ResultComponent, TranslateModule],
-  template: `
+    selector: 'app-home',
+    imports: [CommonModule, EntryFormComponent, ResultComponent, TranslateModule],
+    template: `
     <div class="flex flex-col sm:flex-row">
       <div class="w-full sm:w-1/2">
         <div class="card bg-base-100 shadow-xl">
@@ -26,6 +25,6 @@ import { ResultComponent } from '../../components/layout/result/result.component
         <app-result />
       </div>
     </div>
-  `,
+  `
 })
 export default class HomeComponent {}

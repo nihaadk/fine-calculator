@@ -11,10 +11,9 @@ const RANGE_CONTROL_ACCESSOR = {
 };
 
 @Component({
-  selector: 'app-range-contoler',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-range-contoler',
+    imports: [CommonModule],
+    template: `
     <p>
       <input
         [id]="id()"
@@ -33,7 +32,7 @@ const RANGE_CONTROL_ACCESSOR = {
       <span>{{ value }} km/h</span>
     </div>
   `,
-  providers: [RANGE_CONTROL_ACCESSOR],
+    providers: [RANGE_CONTROL_ACCESSOR]
 })
 export class RangeControlerComponent implements ControlValueAccessor {
   id = input.required<string>();

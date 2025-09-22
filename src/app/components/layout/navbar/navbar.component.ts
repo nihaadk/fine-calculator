@@ -5,15 +5,14 @@ import { LanguageDropdownComponent } from '../../language-dropdown/language-drop
 import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-theme-button.component';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ToggleThemeButtonComponent,
-    LanguageDropdownComponent,
-    TranslateModule,
-  ],
-  template: `
+    selector: 'app-navbar',
+    imports: [
+        CommonModule,
+        ToggleThemeButtonComponent,
+        LanguageDropdownComponent,
+        TranslateModule,
+    ],
+    template: `
     <div class="navbar bg-base-100">
       <div class="flex-1">
         <div class="w-14 md:w-16 rounded">
@@ -34,6 +33,6 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
         </ul>
       </div>
     </div>
-  `,
+  `
 })
 export class NavbarComponent {}

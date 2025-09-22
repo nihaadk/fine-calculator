@@ -8,16 +8,15 @@ import { AlertSuccessComponent } from '../alert/alert-success.component';
 import { LabelComponent } from '../form/label/label.component';
 
 @Component({
-  selector: 'app-measure-message',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TranslateModule,
-    LabelComponent,
-    AlertSuccessComponent,
-    AlertErrorComponent,
-  ],
-  template: `
+    selector: 'app-measure-message',
+    imports: [
+        CommonModule,
+        TranslateModule,
+        LabelComponent,
+        AlertSuccessComponent,
+        AlertErrorComponent,
+    ],
+    template: `
     <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
     @if (measureMessage() === NO_CONSEQUENCES) {
       <app-alert-success>
@@ -28,7 +27,7 @@ import { LabelComponent } from '../form/label/label.component';
         {{ 'MEASURE_MESSAGES.' + measureMessage() | translate }}
       </app-alert-error>
     }
-  `,
+  `
 })
 export class MeasureMessageComponent {
   NO_CONSEQUENCES = MeasuresMessages.NO_CONSEQUENCES;

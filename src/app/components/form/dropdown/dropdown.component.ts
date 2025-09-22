@@ -10,10 +10,9 @@ const SELECT_CONTROL_ACCESSOR = {
 };
 
 @Component({
-  selector: 'app-dropdown',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  template: `
+    selector: 'app-dropdown',
+    imports: [CommonModule, TranslateModule],
+    template: `
     <select class="select select-bordered select-sm w-full max-w-xs">
       @for (option of options(); track $index) {
         <option [id]="$index" [value]="option" [selected]="option === value">
@@ -22,7 +21,7 @@ const SELECT_CONTROL_ACCESSOR = {
       }
     </select>
   `,
-  providers: [SELECT_CONTROL_ACCESSOR],
+    providers: [SELECT_CONTROL_ACCESSOR]
 })
 export class DropdownComponent extends SelectControlValueAccessor {
   prefix = input<string>('');

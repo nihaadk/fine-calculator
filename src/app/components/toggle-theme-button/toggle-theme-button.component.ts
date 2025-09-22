@@ -3,10 +3,9 @@ import { Component, inject } from '@angular/core';
 import { Store } from '../../+state/store';
 
 @Component({
-  selector: 'app-toggle-theme-button',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-toggle-theme-button',
+    imports: [CommonModule],
+    template: `
     <div class="flex flex-col place-content-center">
       <label class="flex cursor-pointer gap-2 ">
         <svg
@@ -47,7 +46,7 @@ import { Store } from '../../+state/store';
       </label>
     </div>
   `,
-  styles: ``,
+    styles: ``
 })
 export class ToggleThemeButtonComponent {
   readonly #store = inject(Store);

@@ -8,17 +8,16 @@ import { FineMessageComponent } from '../../fine-message/fine-message.component'
 import { MeasureMessageComponent } from '../../measure-message/measure-message.component';
 
 @Component({
-  selector: 'app-result',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TranslateModule,
-    AlertWarningComponent,
-    FineMessageComponent,
-    MeasureMessageComponent,
-    CalculationStateComponent,
-  ],
-  template: `
+    selector: 'app-result',
+    imports: [
+        CommonModule,
+        TranslateModule,
+        AlertWarningComponent,
+        FineMessageComponent,
+        MeasureMessageComponent,
+        CalculationStateComponent,
+    ],
+    template: `
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">
         <h2 class="card-title text-4xl justify-center divider divider-primary" translate>
@@ -39,7 +38,7 @@ import { MeasureMessageComponent } from '../../measure-message/measure-message.c
         }
       </div>
     </div>
-  `,
+  `
 })
 export class ResultComponent {
   #store = inject(Store);

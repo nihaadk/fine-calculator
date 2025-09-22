@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  template: `
+    selector: 'app-footer',
+    imports: [CommonModule, TranslateModule],
+    template: `
     <footer class="footer footer-center p-10 bg-base-200 text-base-content">
       <aside>
         <div class="grid grid-flow-col gap-4">
@@ -24,6 +23,6 @@ import { TranslateModule } from '@ngx-translate/core';
         <p translate>COPYRIGHT</p>
       </aside>
     </footer>
-  `,
+  `
 })
 export class FooterComponent {}

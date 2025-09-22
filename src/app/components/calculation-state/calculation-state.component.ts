@@ -1,15 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component, Signal, computed, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '../../+state/store';
 import { getExceedingSpeed } from '../../utils/store-helper';
-import { LabelComponent } from '../form/label/label.component';
 
 @Component({
-  selector: 'app-calculation-state',
-  standalone: true,
-  imports: [CommonModule, LabelComponent, TranslateModule],
-  template: `
+    selector: 'app-calculation-state',
+    template: `
     <div class="stats stats-vertical lg:stats-horizontal my-5">
       <div class="stat place-items-center">
         <div class="stat-title info-content" translate>SAFETY_MARGIN</div>
@@ -28,7 +23,7 @@ import { LabelComponent } from '../form/label/label.component';
         </div>
       </div>
     </div>
-  `,
+  `
 })
 export class CalculationStateComponent {
   #store = inject(Store);

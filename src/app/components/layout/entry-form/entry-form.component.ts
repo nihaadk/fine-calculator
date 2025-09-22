@@ -14,18 +14,17 @@ import { RadioControlerComponent } from '../../form/radio-controler/radio-contro
 import { RangeControlerComponent } from '../../form/range-controler/range-contoler.component';
 
 @Component({
-  selector: 'app-entry-form',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RadioControlerComponent,
-    RangeControlerComponent,
-    LabelComponent,
-    FormControlWrapperComponent,
-    TranslateModule,
-  ],
-  template: `
+    selector: 'app-entry-form',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        RadioControlerComponent,
+        RangeControlerComponent,
+        LabelComponent,
+        FormControlWrapperComponent,
+        TranslateModule,
+    ],
+    template: `
     <form [formGroup]="form" class="p-2">
       <app-form-control>
         <app-label for="streetTyp">{{ 'STREET_TYPE' | translate }}</app-label>
@@ -64,7 +63,7 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
         />
       </app-form-control>
     </form>
-  `,
+  `
 })
 export class EntryFormComponent implements OnInit {
   form!: FormGroup<IEntryForm>;

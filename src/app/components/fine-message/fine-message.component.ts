@@ -8,16 +8,15 @@ import { AlertSuccessComponent } from '../alert/alert-success.component';
 import { LabelComponent } from '../form/label/label.component';
 
 @Component({
-  selector: 'app-fine-message',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TranslateModule,
-    LabelComponent,
-    AlertSuccessComponent,
-    AlertErrorComponent,
-  ],
-  template: `
+    selector: 'app-fine-message',
+    imports: [
+        CommonModule,
+        TranslateModule,
+        LabelComponent,
+        AlertSuccessComponent,
+        AlertErrorComponent,
+    ],
+    template: `
     <app-label>{{ 'FINE' | translate }}</app-label>
     @if (fineMessage() === NO_FINE) {
       <app-alert-success>
@@ -28,7 +27,7 @@ import { LabelComponent } from '../form/label/label.component';
         {{ 'FINE_MESSAGES.' + fineMessage() | translate }}
       </app-alert-error>
     }
-  `,
+  `
 })
 export class FineMessageComponent {
   NO_FINE = MeasuresMessages.NO_FINE;

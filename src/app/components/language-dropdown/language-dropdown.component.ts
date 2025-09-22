@@ -9,12 +9,11 @@ import { OptionService } from '../../service/option.service';
 import { DropdownComponent } from '../form/dropdown/dropdown.component';
 
 @Component({
-  selector: 'app-language-dropdown',
-  standalone: true,
-  imports: [CommonModule, DropdownComponent, ReactiveFormsModule],
-  template: `
+    selector: 'app-language-dropdown',
+    imports: [CommonModule, DropdownComponent, ReactiveFormsModule],
+    template: `
     <app-dropdown [prefix]="'LANGUAGE'" [formControl]="control" [options]="languages" />
-  `,
+  `
 })
 export class LanguageDropdownComponent implements OnInit, OnDestroy {
   #translateService: TranslateService = inject(TranslateService);

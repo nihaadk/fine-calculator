@@ -12,10 +12,9 @@ const RADIO_CONTROL_ACCESSOR = {
 };
 
 @Component({
-  selector: 'app-radio-contoler',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  template: `
+    selector: 'app-radio-contoler',
+    imports: [CommonModule, TranslateModule],
+    template: `
     @for (option of options(); track $index) {
       <div class="form-control">
         <label [for]="getId(option, $index)" class="label cursor-pointer">
@@ -34,7 +33,7 @@ const RADIO_CONTROL_ACCESSOR = {
       </div>
     }
   `,
-  providers: [RADIO_CONTROL_ACCESSOR],
+    providers: [RADIO_CONTROL_ACCESSOR]
 })
 export class RadioControlerComponent implements ControlValueAccessor {
   id = input<string>();
