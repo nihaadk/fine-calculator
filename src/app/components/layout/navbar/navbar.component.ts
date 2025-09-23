@@ -1,21 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageDropdownComponent } from '../../language-dropdown/language-dropdown.component';
 import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-theme-button.component';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ToggleThemeButtonComponent,
-    LanguageDropdownComponent,
-    TranslateModule,
-  ],
+  imports: [ToggleThemeButtonComponent, LanguageDropdownComponent, TranslatePipe],
   template: `
-    <div class="navbar bg-base-100">
-      <div class="flex-1">
+    <div class="navbar bg-base-100 dark:bg-base-200 px-4 shadow-md">
+      <div class="flex-1 flex items-center">
         <div class="w-14 md:w-16 rounded">
           <img
             src="assets/img/blitzer-logo.svg"
@@ -23,7 +16,7 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
             title="{{ 'APP_TITLE' | translate }}"
           />
         </div>
-        <span class="hidden md:text-2xl md:flex ml-2 " translate>APP_TITLE</span>
+        <span class="hidden md:text-2xl md:flex ml-2 ">{{ 'APP_TITLE' | translate }}</span>
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">

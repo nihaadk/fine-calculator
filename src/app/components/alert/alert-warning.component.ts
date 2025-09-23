@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-alert-warning',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-alert-warning',
+    template: `
     <div role="alert" class="alert alert-warning">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +20,6 @@ import { CommonModule } from '@angular/common';
       </svg>
       <span> <ng-content /></span>
     </div>
-  `,
+  `
 })
 export class AlertWarningComponent {}

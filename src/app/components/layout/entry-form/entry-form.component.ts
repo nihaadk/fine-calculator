@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
 import { RadarType } from '../../../enums/radar-type.enum';
 import { StreetType } from '../../../enums/street-type.enum';
@@ -14,18 +14,16 @@ import { RadioControlerComponent } from '../../form/radio-controler/radio-contro
 import { RangeControlerComponent } from '../../form/range-controler/range-contoler.component';
 
 @Component({
-  selector: 'app-entry-form',
-  standalone: true,
-  imports: [
-    CommonModule,
+    selector: 'app-entry-form',
+    imports: [
     ReactiveFormsModule,
     RadioControlerComponent,
     RangeControlerComponent,
     LabelComponent,
     FormControlWrapperComponent,
-    TranslateModule,
-  ],
-  template: `
+    TranslatePipe
+],
+    template: `
     <form [formGroup]="form" class="p-2">
       <app-form-control>
         <app-label for="streetTyp">{{ 'STREET_TYPE' | translate }}</app-label>
@@ -64,7 +62,7 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
         />
       </app-form-control>
     </form>
-  `,
+  `
 })
 export class EntryFormComponent implements OnInit {
   form!: FormGroup<IEntryForm>;

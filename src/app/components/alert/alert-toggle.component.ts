@@ -5,7 +5,6 @@ import { AlertSuccessComponent } from './alert-success.component';
 
 @Component({
   selector: 'app-alert-toggle',
-  standalone: true,
   imports: [CommonModule, AlertSuccessComponent, AlertErrorComponent],
   template: `
     @if (isError()) {

@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateDirective } from '@ngx-translate/core';
+
 
 type radioValueType = string | null;
 
@@ -12,14 +13,13 @@ const RADIO_CONTROL_ACCESSOR = {
 };
 
 @Component({
-  selector: 'app-radio-contoler',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  template: `
+    selector: 'app-radio-contoler',
+    imports: [TranslateDirective],
+    template: `
     @for (option of options(); track $index) {
-      <div class="form-control">
-        <label [for]="getId(option, $index)" class="label cursor-pointer">
-          <span class="lsabel-text" translate>{{ prefix + option }}</span>
+      <div class="form-control w-full mb-4">
+        <label [for]="getId(option, $index)" class="label cursor-pointer flex justify-between items-center w-full">
+          <span class="label-text" translate>{{ prefix + option }}</span>
           <input
             type="radio"
             [name]="name()"
@@ -28,13 +28,13 @@ const RADIO_CONTROL_ACCESSOR = {
             (blur)="onBlur()"
             [checked]="isCheck(value, option)"
             (change)="valueChanged(option)"
-            class="radio checked:radio-button-color"
+            class="radio radio-primary"
           />
         </label>
       </div>
     }
   `,
-  providers: [RADIO_CONTROL_ACCESSOR],
+    providers: [RADIO_CONTROL_ACCESSOR]
 })
 export class RadioControlerComponent implements ControlValueAccessor {
   id = input<string>();

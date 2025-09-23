@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component, Signal, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
 import { AlertWarningComponent } from '../../alert/alert-warning.component';
 import { CalculationStateComponent } from '../../calculation-state/calculation-state.component';
@@ -9,10 +8,8 @@ import { MeasureMessageComponent } from '../../measure-message/measure-message.c
 
 @Component({
   selector: 'app-result',
-  standalone: true,
   imports: [
-    CommonModule,
-    TranslateModule,
+    TranslatePipe,
     AlertWarningComponent,
     FineMessageComponent,
     MeasureMessageComponent,
@@ -21,10 +18,10 @@ import { MeasureMessageComponent } from '../../measure-message/measure-message.c
   template: `
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">
-        <h2 class="card-title text-4xl justify-center divider divider-primary" translate>
-          RESULT
+        <h2 class="card-title text-4xl justify-center divider divider-primary">
+          {{ 'RESULT' | translate }}
         </h2>
-
+        
         <app-calculation-state />
 
         @defer (when netSpeed()) {
