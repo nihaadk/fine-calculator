@@ -7,8 +7,8 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
   selector: 'app-navbar',
   imports: [ToggleThemeButtonComponent, LanguageDropdownComponent, TranslatePipe],
   template: `
-    <div class="navbar bg-base-100">
-      <div class="flex-1">
+    <div class="navbar bg-base-100 dark:bg-base-200 px-4 shadow-md">
+      <div class="flex-1 flex items-center">
         <div class="w-14 md:w-16 rounded">
           <img
             src="assets/img/blitzer-logo.svg"
@@ -16,10 +16,10 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
             title="{{ 'APP_TITLE' | translate }}"
           />
         </div>
-        <span class="hidden md:text-2xl md:flex ml-2 ">{{ 'APP_TITLE' | translate }}</span>
+        <span class="hidden md:flex md:text-2xl ml-2 font-semibold">{{ 'APP_TITLE' | translate }}</span>
       </div>
       <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
+        <ul class="menu menu-horizontal px-1 gap-2">
           <li>
             <app-language-dropdown />
           </li>

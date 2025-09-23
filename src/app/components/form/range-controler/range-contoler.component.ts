@@ -1,4 +1,3 @@
-
 import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -11,27 +10,25 @@ const RANGE_CONTROL_ACCESSOR = {
 };
 
 @Component({
-    selector: 'app-range-contoler',
-    template: `
-    <p>
-      <input
-        [id]="id()"
-        [min]="min()"
-        [max]="max()"
-        [step]="step()"
-        [value]="value"
-        type="range"
-        class="range range-input-color"
-        (blur)="onBlur()"
-        (input)="onInputChange($event)"
-      />
-    </p>
+  selector: 'app-range-contoler',
+  template: `
+    <input
+      [id]="id()"
+      [min]="min()"
+      [max]="max()"
+      [step]="step()"
+      [value]="value"
+      type="range"
+      class="range range-primary range-md w-full"
+      (blur)="onBlur()"
+      (input)="onInputChange($event)"
+    />
 
     <div class="w-full flex justify-center text-md px-2 py-2">
       <span>{{ value }} km/h</span>
     </div>
   `,
-    providers: [RANGE_CONTROL_ACCESSOR]
+  providers: [RANGE_CONTROL_ACCESSOR],
 })
 export class RangeControlerComponent implements ControlValueAccessor {
   id = input.required<string>();
