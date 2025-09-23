@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { defaultLanguage } from '../../config/translate.config';
 import { Language } from '../../enums/language.enum';
 import { OptionService } from '../../service/option.service';
 import { DropdownComponent } from '../form/dropdown/dropdown.component';
@@ -24,8 +25,7 @@ export class LanguageDropdownComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription = new Subscription();
 
   ngOnInit(): void {
-    // this.initLanguage();
-    console.log('currenLang', this.#translateService.currentLang)
+    this.initLanguage();
     this.subscribeToLanguageChange();
   }
 
@@ -34,7 +34,7 @@ export class LanguageDropdownComponent implements OnInit, OnDestroy {
   }
 
   private initLanguage(): void {
-    // this.#translateService.use(defaultLanguage);
+    this.#translateService.use(defaultLanguage);
     this.control.patchValue(this.currentLang);
   }
 

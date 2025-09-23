@@ -1,7 +1,7 @@
 
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
 import { RadarType } from '../../../enums/radar-type.enum';
 import { StreetType } from '../../../enums/street-type.enum';
@@ -21,7 +21,7 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
     RangeControlerComponent,
     LabelComponent,
     FormControlWrapperComponent,
-    TranslateModule
+    TranslatePipe
 ],
     template: `
     <form [formGroup]="form" class="p-2">

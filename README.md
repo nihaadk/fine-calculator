@@ -11,6 +11,12 @@ This is a fine calculator designed for Switzerland. The application was develope
 - Standalone Components
 - Signal / SignalStore
 - New Control Flows
+- NgOptimizedImage
+
+## Next:
+
+- Signal Forms
+- New coding style guide
 
 ## Demo
 
