@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Signal, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
@@ -10,13 +10,12 @@ import { MeasureMessageComponent } from '../../measure-message/measure-message.c
 @Component({
     selector: 'app-result',
     imports: [
-        CommonModule,
-        TranslateModule,
-        AlertWarningComponent,
-        FineMessageComponent,
-        MeasureMessageComponent,
-        CalculationStateComponent,
-    ],
+    TranslateModule,
+    AlertWarningComponent,
+    FineMessageComponent,
+    MeasureMessageComponent,
+    CalculationStateComponent
+],
     template: `
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">

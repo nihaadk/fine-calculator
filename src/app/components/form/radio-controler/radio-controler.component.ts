@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateDirective } from '@ngx-translate/core';
+
 
 type radioValueType = string | null;
 
@@ -13,7 +14,7 @@ const RADIO_CONTROL_ACCESSOR = {
 
 @Component({
     selector: 'app-radio-contoler',
-    imports: [CommonModule, TranslateModule],
+    imports: [TranslateDirective],
     template: `
     @for (option of options(); track $index) {
       <div class="form-control">

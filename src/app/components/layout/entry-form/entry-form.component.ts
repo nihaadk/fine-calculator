@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -16,14 +16,13 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
 @Component({
     selector: 'app-entry-form',
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        RadioControlerComponent,
-        RangeControlerComponent,
-        LabelComponent,
-        FormControlWrapperComponent,
-        TranslateModule,
-    ],
+    ReactiveFormsModule,
+    RadioControlerComponent,
+    RangeControlerComponent,
+    LabelComponent,
+    FormControlWrapperComponent,
+    TranslateModule
+],
     template: `
     <form [formGroup]="form" class="p-2">
       <app-form-control>

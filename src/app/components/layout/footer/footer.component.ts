@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateDirective } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-footer',
-    imports: [CommonModule, TranslateModule],
+    imports: [TranslateDirective],
     template: `
     <footer class="footer footer-center p-10 bg-base-200 text-base-content">
       <aside>

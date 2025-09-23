@@ -1,16 +1,15 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { defaultLanguage } from '../../config/translate.config';
 import { Language } from '../../enums/language.enum';
 import { OptionService } from '../../service/option.service';
 import { DropdownComponent } from '../form/dropdown/dropdown.component';
 
 @Component({
     selector: 'app-language-dropdown',
-    imports: [CommonModule, DropdownComponent, ReactiveFormsModule],
+    imports: [DropdownComponent, ReactiveFormsModule],
     template: `
     <app-dropdown [prefix]="'LANGUAGE'" [formControl]="control" [options]="languages" />
   `
@@ -25,7 +24,8 @@ export class LanguageDropdownComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription = new Subscription();
 
   ngOnInit(): void {
-    this.initLanguage();
+    // this.initLanguage();
+    console.log('currenLang', this.#translateService.currentLang)
     this.subscribeToLanguageChange();
   }
 
@@ -34,8 +34,7 @@ export class LanguageDropdownComponent implements OnInit, OnDestroy {
   }
 
   private initLanguage(): void {
-    this.#translateService.setDefaultLang(defaultLanguage);
-    this.#translateService.use(defaultLanguage);
+    // this.#translateService.use(defaultLanguage);
     this.control.patchValue(this.currentLang);
   }
 
@@ -50,6 +49,6 @@ export class LanguageDropdownComponent implements OnInit, OnDestroy {
   }
 
   private get currentLang(): string {
-    return this.#translateService.currentLang.toUpperCase();
+    return this.#translateService.getCurrentLang().toUpperCase();
   }
 }

@@ -1,10 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-alert-error',
-    imports: [CommonModule],
-    template: `
+  selector: 'app-alert-error',
+  template: `
     <div role="alert" class="alert alert-error">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +19,6 @@ import { CommonModule } from '@angular/common';
       </svg>
       <span><ng-content /></span>
     </div>
-  `
+  `,
 })
 export class AlertErrorComponent {}

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -12,7 +12,6 @@ const RANGE_CONTROL_ACCESSOR = {
 
 @Component({
     selector: 'app-range-contoler',
-    imports: [CommonModule],
     template: `
     <p>
       <input

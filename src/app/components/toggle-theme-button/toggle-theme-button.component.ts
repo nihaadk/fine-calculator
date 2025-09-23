@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject } from '@angular/core';
 import { Store } from '../../+state/store';
 
 @Component({
     selector: 'app-toggle-theme-button',
-    imports: [CommonModule],
     template: `
     <div class="flex flex-col place-content-center">
       <label class="flex cursor-pointer gap-2 ">

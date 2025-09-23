@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Signal, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '../../+state/store';
 import { MeasuresMessages } from '../../enums/measures-messages.enum';
 import { AlertErrorComponent } from '../alert/alert-error.component';
@@ -10,12 +10,11 @@ import { LabelComponent } from '../form/label/label.component';
 @Component({
     selector: 'app-fine-message',
     imports: [
-        CommonModule,
-        TranslateModule,
-        LabelComponent,
-        AlertSuccessComponent,
-        AlertErrorComponent,
-    ],
+    TranslatePipe,
+    LabelComponent,
+    AlertSuccessComponent,
+    AlertErrorComponent
+],
     template: `
     <app-label>{{ 'FINE' | translate }}</app-label>
     @if (fineMessage() === NO_FINE) {

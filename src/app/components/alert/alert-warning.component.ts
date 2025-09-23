@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-alert-warning',
-    imports: [CommonModule],
     template: `
     <div role="alert" class="alert alert-warning">
       <svg

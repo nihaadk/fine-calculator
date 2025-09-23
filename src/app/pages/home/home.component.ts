@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { EntryFormComponent } from '../../components/layout/entry-form/entry-form.component';
@@ -6,7 +6,7 @@ import { ResultComponent } from '../../components/layout/result/result.component
 
 @Component({
     selector: 'app-home',
-    imports: [CommonModule, EntryFormComponent, ResultComponent, TranslateModule],
+    imports: [EntryFormComponent, ResultComponent, TranslateModule],
     template: `
     <div class="flex flex-col sm:flex-row">
       <div class="w-full sm:w-1/2">

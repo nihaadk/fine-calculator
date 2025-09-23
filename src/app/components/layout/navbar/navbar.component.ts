@@ -1,18 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageDropdownComponent } from '../../language-dropdown/language-dropdown.component';
 import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-theme-button.component';
 
 @Component({
-    selector: 'app-navbar',
-    imports: [
-        CommonModule,
-        ToggleThemeButtonComponent,
-        LanguageDropdownComponent,
-        TranslateModule,
-    ],
-    template: `
+  selector: 'app-navbar',
+  imports: [ToggleThemeButtonComponent, LanguageDropdownComponent, TranslateModule],
+  template: `
     <div class="navbar bg-base-100">
       <div class="flex-1">
         <div class="w-14 md:w-16 rounded">
@@ -33,6 +27,6 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
         </ul>
       </div>
     </div>
-  `
+  `,
 })
 export class NavbarComponent {}

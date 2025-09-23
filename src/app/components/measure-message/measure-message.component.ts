@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Signal, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '../../+state/store';
@@ -10,12 +10,11 @@ import { LabelComponent } from '../form/label/label.component';
 @Component({
     selector: 'app-measure-message',
     imports: [
-        CommonModule,
-        TranslateModule,
-        LabelComponent,
-        AlertSuccessComponent,
-        AlertErrorComponent,
-    ],
+    TranslateModule,
+    LabelComponent,
+    AlertSuccessComponent,
+    AlertErrorComponent
+],
     template: `
     <app-label>{{ 'ADMINISTRATIVE_MEASURES' | translate }}</app-label>
     @if (measureMessage() === NO_CONSEQUENCES) {
