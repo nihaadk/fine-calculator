@@ -10,7 +10,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
     template: `
     <main>
       <app-navbar />
-      <div class="mx-auto p-10 bg-primary dark:bg-neutral">
+      <div class="mx-auto p-10">
         <router-outlet></router-outlet>
       </div>
     </main>

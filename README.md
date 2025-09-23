@@ -17,6 +17,7 @@ This is a fine calculator designed for Switzerland. The application was develope
 
 - Signal Forms
 - New coding style guide
+- Zoneless Application
 
 ## Demo
 

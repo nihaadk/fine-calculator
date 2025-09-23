@@ -2,7 +2,7 @@
 /* @plugin "daisyui"; */
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, dark;
+  themes: light --default, dark --prefersdark;
 }
 
 /* @tailwind base;

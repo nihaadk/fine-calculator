@@ -8,7 +8,6 @@ import { Store } from '../../+state/store';
       <input
         type="checkbox"
         class="theme-controller"
-        value="synthwave"
         [checked]="isDarkTheme()"
         (change)="toggleTheme()"
       />

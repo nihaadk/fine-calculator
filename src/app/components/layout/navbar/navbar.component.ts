@@ -16,10 +16,10 @@ import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-the
             title="{{ 'APP_TITLE' | translate }}"
           />
         </div>
-        <span class="hidden md:flex md:text-2xl ml-2 font-semibold">{{ 'APP_TITLE' | translate }}</span>
+        <span class="hidden md:text-2xl md:flex ml-2 ">{{ 'APP_TITLE' | translate }}</span>
       </div>
       <div class="flex-none">
-        <ul class="menu menu-horizontal px-1 gap-2">
+        <ul class="menu menu-horizontal px-1">
           <li>
             <app-language-dropdown />
           </li>
