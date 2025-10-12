@@ -1,14 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { TranslateModule } from '@ngx-translate/core';
 import { EntryFormComponent } from './entry-form.component';
 
-describe('FineFormComponent', () => {
+describe('EntryFormComponent', () => {
   let component: EntryFormComponent;
   let fixture: ComponentFixture<EntryFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EntryFormComponent],
+      imports: [EntryFormComponent, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EntryFormComponent);

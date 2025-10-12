@@ -12,6 +12,12 @@ describe('RangeContolerComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(RangeControlerComponent);
+
+    fixture.componentRef.setInput('id', 'test-range');
+    fixture.componentRef.setInput('min', 0);
+    fixture.componentRef.setInput('max', 100);
+    fixture.componentRef.setInput('step', 1);
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

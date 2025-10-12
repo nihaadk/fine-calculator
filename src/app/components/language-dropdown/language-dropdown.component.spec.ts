@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { TranslateModule } from '@ngx-translate/core';
 import { LanguageDropdownComponent } from './language-dropdown.component';
 
 describe('LanguageDropdownComponent', () => {
@@ -8,10 +9,9 @@ describe('LanguageDropdownComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LanguageDropdownComponent]
-    })
-    .compileComponents();
-    
+      imports: [LanguageDropdownComponent, TranslateModule.forRoot()],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LanguageDropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
