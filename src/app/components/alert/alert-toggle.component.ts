@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { AlertErrorComponent } from './alert-error.component';
-import { AlertSuccessComponent } from './alert-success.component';
+import { AlertErrorComponent } from '@components/alert/alert-error.component';
+import { AlertSuccessComponent } from '@components/alert/alert-success.component';
 
 @Component({
   selector: 'app-alert-toggle',

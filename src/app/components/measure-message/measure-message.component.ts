@@ -1,10 +1,10 @@
 import { Component, Signal, inject } from '@angular/core';
+import { AlertErrorComponent } from '@components/alert/alert-error.component';
+import { AlertSuccessComponent } from '@components/alert/alert-success.component';
+import { LabelComponent } from '@components/form/label/label.component';
+import { MeasuresMessages } from '@enums/measures-messages.enum';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Store } from '../../+state/store';
-import { MeasuresMessages } from '../../enums/measures-messages.enum';
-import { AlertErrorComponent } from '../alert/alert-error.component';
-import { AlertSuccessComponent } from '../alert/alert-success.component';
-import { LabelComponent } from '../form/label/label.component';
+import { Store } from '@state/store';
 
 @Component({
   selector: 'app-measure-message',

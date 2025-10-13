@@ -1,4 +1,4 @@
-import { IStore } from '../interfaces/store.inteface';
+import { IStore } from '@interfaces/store.inteface';
 import { FINE_CATALOG_STATE } from './fine-catalog.state';
 import { MEASURE_CATALOG_STATE } from './measures-catalog.state';
 

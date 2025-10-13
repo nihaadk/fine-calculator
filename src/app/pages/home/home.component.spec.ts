@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { EntryFormComponent } from '@layouts/entry-form/entry-form.component';
+import { ResultComponent } from '@layouts/result/result.component';
+import { MockTranslatePipe } from '@mocks/translate-mock';
 import { TranslateModule } from '@ngx-translate/core';
-import { EntryFormComponent } from '../../components/layout/entry-form/entry-form.component';
-import { ResultComponent } from '../../components/layout/result/result.component';
-import { MockTranslatePipe } from '../../mocks/translate-mock';
-import HomeComponent from './home.component';
+import HomeComponent from '@pages/home/home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

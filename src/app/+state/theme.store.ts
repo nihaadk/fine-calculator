@@ -1,13 +1,13 @@
 import { computed } from '@angular/core';
+import { Theme } from '@enums/theme.enum';
 import {
-    patchState,
-    signalStoreFeature,
-    withComputed,
-    withHooks,
-    withMethods,
-    withState,
+  patchState,
+  signalStoreFeature,
+  withComputed,
+  withHooks,
+  withMethods,
+  withState,
 } from '@ngrx/signals';
-import { Theme } from '../enums/theme.enum';
 
 export type ThemeState = { theme: Theme };
 

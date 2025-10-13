@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { EntryFormComponent } from '@layouts/entry-form/entry-form.component';
+import { ResultComponent } from '@layouts/result/result.component';
 import { TranslatePipe } from '@ngx-translate/core';
-import { EntryFormComponent } from '../../components/layout/entry-form/entry-form.component';
-import { ResultComponent } from '../../components/layout/result/result.component';
 
 @Component({
   selector: 'app-home',

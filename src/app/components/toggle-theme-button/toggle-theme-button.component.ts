@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Store } from '../../+state/store';
+import { Store } from '@state/store';
 
 @Component({
   selector: 'app-toggle-theme-button',

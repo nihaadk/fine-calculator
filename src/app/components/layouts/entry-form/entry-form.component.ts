@@ -1,29 +1,28 @@
-
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControlWrapperComponent } from '@components/form/form-control-wrapper/form-control-wrapper.component';
+import { LabelComponent } from '@components/form/label/label.component';
+import { RadioControlerComponent } from '@components/form/radio-controler/radio-controler.component';
+import { RangeControlerComponent } from '@components/form/range-controler/range-contoler.component';
+import { RadarType } from '@enums/radar-type.enum';
+import { StreetType } from '@enums/street-type.enum';
+import { IEntryForm } from '@interfaces/entry-form.interface';
+import { IFine } from '@interfaces/fine.interfaces';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Store } from '../../../+state/store';
-import { RadarType } from '../../../enums/radar-type.enum';
-import { StreetType } from '../../../enums/street-type.enum';
-import { IEntryForm } from '../../../interfaces/entry-form.interface';
-import { IFine } from '../../../interfaces/fine.interfaces';
-import { OptionService } from '../../../service/option.service';
-import { FormControlWrapperComponent } from '../../form/form-control-wrapper/form-control-wrapper.component';
-import { LabelComponent } from '../../form/label/label.component';
-import { RadioControlerComponent } from '../../form/radio-controler/radio-controler.component';
-import { RangeControlerComponent } from '../../form/range-controler/range-contoler.component';
+import { OptionService } from '@services/option.service';
+import { Store } from '@state/store';
 
 @Component({
-    selector: 'app-entry-form',
-    imports: [
+  selector: 'app-entry-form',
+  imports: [
     ReactiveFormsModule,
     RadioControlerComponent,
     RangeControlerComponent,
     LabelComponent,
     FormControlWrapperComponent,
-    TranslatePipe
-],
-    template: `
+    TranslatePipe,
+  ],
+  template: `
     <form [formGroup]="form" class="p-2">
       <app-form-control>
         <app-label for="streetTyp">{{ 'STREET_TYPE' | translate }}</app-label>
@@ -62,7 +61,7 @@ import { RangeControlerComponent } from '../../form/range-controler/range-contol
         />
       </app-form-control>
     </form>
-  `
+  `,
 })
 export class EntryFormComponent implements OnInit {
   form!: FormGroup<IEntryForm>;

@@ -1,12 +1,12 @@
 
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { DropdownComponent } from '@components/form/dropdown/dropdown.component';
+import { defaultLanguage } from '@config/translate.config';
+import { Language } from '@enums/language.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { OptionService } from '@services/option.service';
 import { Subscription } from 'rxjs';
-import { defaultLanguage } from '../../config/translate.config';
-import { Language } from '../../enums/language.enum';
-import { OptionService } from '../../service/option.service';
-import { DropdownComponent } from '../form/dropdown/dropdown.component';
 
 @Component({
     selector: 'app-language-dropdown',
