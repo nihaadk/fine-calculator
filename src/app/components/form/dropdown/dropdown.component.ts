@@ -1,34 +1,35 @@
-import { Component, forwardRef, inject, input } from '@angular/core';
-import { NG_VALUE_ACCESSOR, SelectControlValueAccessor } from '@angular/forms';
+import { Component, effect, inject, input, model } from '@angular/core';
+import { FormValueControl } from '@angular/forms/signals';
 import { TranslateService } from '@ngx-translate/core';
 
-const SELECT_CONTROL_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => DropdownComponent),
-  multi: true,
-};
 
 @Component({
   selector: 'app-dropdown',
   template: `
     <select class="select select-bordered select-sm w-full max-w-xs">
       @for (option of options(); track $index) {
-        <option [id]="$index" [value]="option" [selected]="option === value">
+        <option [id]="$index" [value]="option" [selected]="option === value()">
           {{ getValue(option) }}
         </option>
       }
     </select>
   `,
-  providers: [SELECT_CONTROL_ACCESSOR],
 })
-export class DropdownComponent extends SelectControlValueAccessor {
+export class DropdownComponent implements FormValueControl<string | null> {
+  protected readonly translateService: TranslateService = inject(TranslateService);
+
   prefix = input<string>('');
   options = input.required<string[]>();
+  value = model<string | null>(null);
 
-  #translateService: TranslateService = inject(TranslateService);
+  constructor() {
+    effect(() => {
+      console.log('Selected option:', this.value());
+    });
+  }
 
   getValue(option: string): string {
     if (!this.prefix()) return option;
-    return this.#translateService.instant(`${this.prefix()}.${option}`);
+    return this.translateService.instant(`${this.prefix()}.${option}`);
   }
 }
