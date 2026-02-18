@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-alert-warning',
     template: `
     <div role="alert" class="alert alert-warning">

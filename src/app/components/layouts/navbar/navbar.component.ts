@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageDropdownComponent } from '../../language-dropdown/language-dropdown.component';
 import { ToggleThemeButtonComponent } from '../../toggle-theme-button/toggle-theme-button.component';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-navbar',
   imports: [ToggleThemeButtonComponent, LanguageDropdownComponent, TranslatePipe],
   template: `

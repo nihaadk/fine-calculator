@@ -1,32 +1,27 @@
-
-import { Component, forwardRef, input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { FormValueControl } from '@angular/forms/signals';
 import { TranslateDirective } from '@ngx-translate/core';
-
 
 type radioValueType = string | null;
 
-const RADIO_CONTROL_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => RadioControlerComponent),
-  multi: true,
-};
-
 @Component({
-    selector: 'app-radio-contoler',
-    imports: [TranslateDirective],
-    template: `
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-radio-contoler',
+  imports: [TranslateDirective],
+  template: `
     @for (option of options(); track $index) {
       <div class="form-control w-full mb-4">
-        <label [for]="getId(option, $index)" class="label cursor-pointer flex justify-between items-center w-full">
+        <label
+          [for]="getId(option, $index)"
+          class="label cursor-pointer flex justify-between items-center w-full"
+        >
           <span class="label-text" translate>{{ prefix + option }}</span>
           <input
             type="radio"
             [name]="name()"
             [id]="getId(option, $index)"
-            [value]="value"
-            (blur)="onBlur()"
-            [checked]="isCheck(value, option)"
+            [value]="value()"
+            [checked]="isCheck(value(), option)"
             (change)="valueChanged(option)"
             class="radio radio-primary"
           />
@@ -34,37 +29,16 @@ const RADIO_CONTROL_ACCESSOR = {
       </div>
     }
   `,
-    providers: [RADIO_CONTROL_ACCESSOR]
 })
-export class RadioControlerComponent implements ControlValueAccessor {
+export class RadioControlerComponent implements FormValueControl<radioValueType> {
   id = input<string>();
   options = input.required<string[]>();
   translatePrefix = input<string>('');
   name = input<string>('radio-name');
-
-  value: radioValueType = null;
-  private onChange!: (value: radioValueType) => void;
-  private onTouched!: () => void;
-
-  writeValue(value: radioValueType): void {
-    this.value = value;
-  }
-
-  registerOnChange(onChange: (value: radioValueType) => void): void {
-    this.onChange = onChange;
-  }
-
-  registerOnTouched(onTouched: () => void): void {
-    this.onTouched = onTouched;
-  }
+  value = model<radioValueType>(null);
 
   valueChanged(newValue: radioValueType): void {
-    this.value = newValue;
-    this.onChange(this.value);
-  }
-
-  onBlur(): void {
-    this.onTouched();
+    this.value.set(newValue);
   }
 
   getId(option: string, index: number): string {

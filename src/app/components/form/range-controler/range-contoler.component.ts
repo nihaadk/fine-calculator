@@ -1,70 +1,43 @@
-import { Component, forwardRef, input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { FormValueControl } from '@angular/forms/signals';
 
 type rangeValueType = number | null;
 
-const RANGE_CONTROL_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => RangeControlerComponent),
-  multi: true,
-};
-
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-range-contoler',
   template: `
     <input
       [id]="id()"
-      [min]="min()"
-      [max]="max()"
       [step]="step()"
-      [value]="value"
+      [value]="value()"
+      [min]="minValue()"
+      [max]="maxValue()"
+      (input)="onInputChange($event)"
       type="range"
       class="range range-primary range-md w-full"
-      (blur)="onBlur()"
-      (input)="onInputChange($event)"
     />
 
     <div class="w-full flex justify-center text-md px-2 py-2">
-      <span>{{ value }} km/h</span>
+      <span>{{ value() }} km/h</span>
     </div>
   `,
-  providers: [RANGE_CONTROL_ACCESSOR],
 })
-export class RangeControlerComponent implements ControlValueAccessor {
+export class RangeControlerComponent implements FormValueControl<rangeValueType> {
   id = input.required<string>();
-  min = input<number>(0);
-  max = input<number>(100);
   step = input<number>(1);
-
-  value: rangeValueType = 0;
-
-  private onChange!: (value: rangeValueType) => void;
-  private onTouched!: () => void;
-
-  writeValue(value: rangeValueType): void {
-    !value ? (this.value = 0) : (this.value = value);
-  }
-
-  registerOnChange(onChange: (value: rangeValueType) => void): void {
-    this.onChange = onChange;
-  }
-
-  registerOnTouched(onTouched: () => void): void {
-    this.onTouched = onTouched;
-  }
+  value = model<rangeValueType>(0);
+  minValue = input<number | undefined>(0);
+  maxValue = input<number | undefined>(130);
+  touched = model(false);
 
   onInputChange(event: Event): void {
-    this.value = this.targetValue(event);
-    this.onChange(this.value);
-    this.onTouched();
-  }
-
-  onBlur(): void {
-    this.onTouched();
+    const target = this.targetValue(event);
+    this.value.set(target);
   }
 
   private targetValue(event: Event): number {
     const target = event.target as HTMLInputElement;
-    return +target.value;
+    return target.valueAsNumber;
   }
 }

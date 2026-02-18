@@ -1,9 +1,10 @@
-import { Component, Signal, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, computed, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '@state/store';
 import { getExceedingSpeed } from '@utils/store-helper';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-calculation-state',
   imports: [TranslatePipe],
   template: `

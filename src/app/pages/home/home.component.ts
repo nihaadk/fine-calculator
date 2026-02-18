@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { EntryFormComponent } from '@layouts/entry-form/entry-form.component';
 import { ResultComponent } from '@layouts/result/result.component';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-home',
   imports: [EntryFormComponent, ResultComponent, TranslatePipe],
   template: `

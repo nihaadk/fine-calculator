@@ -1,4 +1,4 @@
-import { Component, Signal, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, inject } from '@angular/core';
 import { AlertErrorComponent } from '@components/alert/alert-error.component';
 import { AlertSuccessComponent } from '@components/alert/alert-success.component';
 import { LabelComponent } from '@components/form/label/label.component';
@@ -7,6 +7,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '@state/store';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-fine-message',
   imports: [TranslatePipe, LabelComponent, AlertSuccessComponent, AlertErrorComponent],
   template: `

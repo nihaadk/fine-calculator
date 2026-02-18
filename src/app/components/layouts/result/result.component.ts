@@ -1,4 +1,4 @@
-import { Component, Signal, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Store } from '../../../+state/store';
 import { AlertWarningComponent } from '../../alert/alert-warning.component';
@@ -7,6 +7,7 @@ import { FineMessageComponent } from '../../fine-message/fine-message.component'
 import { MeasureMessageComponent } from '../../measure-message/measure-message.component';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-result',
   imports: [
     TranslatePipe,
