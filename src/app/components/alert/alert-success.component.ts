@@ -1,10 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-alert-success',
-  standalone: true,
-  imports: [CommonModule],
   template: `
     <div role="alert" class="alert alert-success">
       <svg

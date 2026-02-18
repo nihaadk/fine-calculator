@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { TranslateModule } from '@ngx-translate/core';
 import { FineMessageComponent } from './fine-message.component';
 
 describe('FineMessageComponent', () => {
@@ -8,7 +9,7 @@ describe('FineMessageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FineMessageComponent],
+      imports: [FineMessageComponent, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FineMessageComponent);

@@ -1,18 +1,17 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from './components/layout/footer/footer.component';
-import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { FooterComponent } from '@layouts/footer/footer.component';
+import { NavbarComponent } from '@layouts/navbar/navbar.component';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   template: `
     <main>
       <app-navbar />
-      <div class="mx-auto p-10 bg-primary-content">
-        <router-outlet></router-outlet>
+      <div class="mx-auto p-3 sm:p-6 lg:p-10">
+        <router-outlet />
       </div>
     </main>
     <app-footer />

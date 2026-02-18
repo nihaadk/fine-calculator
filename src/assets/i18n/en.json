@@ -1,10 +1,10 @@
 {
   "APP_TITLE": "Fine Calculator",
   "INTRODUCTION": "Please enter your details in the form so that the calculation can be carried out.",
-  "COPYRIGHT": "Copyright © 2023 - All right reserved",
+  "COPYRIGHT": "Copyright © 2025 - All right reserved",
   "INPUT": "Input",
   "RESULT": "Result",
-  "SAFETY_MARGIN": "Safety margin",
+  "SAFETY_MARGIN": "Tolerance",
   "NET_SPEED": "Net speed",
   "EXCEEDING": "Exceeding",
   "FINE": "Fine",
@@ -17,9 +17,9 @@
   },
   "RADAR_TYPE": "Radar-Typ",
   "RADAR_TYPE_OPTIONS": {
-    "LASER_FIX": "Laser fix (Safety margin 3-5 km/h)",
-    "RADAR_FIX": "Radar fix (Safety margin 5-7 km/h)",
-    "RADAR_MOBILE": "Radar mobile (Safety margin 7-9 km/h)"
+    "LASER_FIX": "Laser fix (Tolerance 3-5 km/h)",
+    "RADAR_FIX": "Radar fix (Tolerance 5-7 km/h)",
+    "RADAR_MOBILE": "Radar mobile (Tolerance 7-9 km/h)"
   },
   "ALLOWED_SPEED": "Allowed Speed",
   "ESTIMATED_SPEED": "Estimated Speed",

@@ -1,28 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { Component, Signal, computed, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
-import { Store } from '../../+state/store';
-import { getExceedingSpeed } from '../../utils/store-helper';
-import { LabelComponent } from '../form/label/label.component';
+import { ChangeDetectionStrategy, Component, Signal, computed, inject } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { Store } from '@state/store';
+import { getExceedingSpeed } from '@utils/store-helper';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-calculation-state',
-  standalone: true,
-  imports: [CommonModule, LabelComponent, TranslateModule],
+  imports: [TranslatePipe],
   template: `
-    <div class="stats stats-vertical lg:stats-horizontal my-5">
+    <div class="stats stats-vertical sm:stats-horizontal shadow w-full my-3 sm:my-5">
       <div class="stat place-items-center">
-        <div class="stat-title info-content" translate>SAFETY_MARGIN</div>
+        <div class="stat-title info-content">{{ 'SAFETY_MARGIN' | translate }}</div>
         <div class="stat-value">{{ allowedSpeed() }} <span class="text-base">km/h</span></div>
       </div>
 
       <div class="stat place-items-center">
-        <div class="stat-title info-content" translate>NET_SPEED</div>
+        <div class="stat-title info-content">{{ 'NET_SPEED' | translate }}</div>
         <div class="stat-value">{{ netSpeed() }} <span class="text-base">km/h</span></div>
       </div>
 
       <div class="stat place-items-center">
-        <div class="stat-title info-content" translate>EXCEEDING</div>
+        <div class="stat-title info-content">{{ 'EXCEEDING' | translate }}</div>
         <div class="stat-value">
           {{ exceedingSpeed() }} <span class="text-base">km/h</span>
         </div>

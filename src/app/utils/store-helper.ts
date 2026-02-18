@@ -1,8 +1,8 @@
-import { MeasuresMessages } from '../enums/measures-messages.enum';
-import { RadarType } from '../enums/radar-type.enum';
-import { ICatalog } from '../interfaces/catalog.interface';
-import { IFine } from '../interfaces/fine.interfaces';
-import { IMeasure } from '../interfaces/measure.interface';
+import { MeasuresMessages } from '@enums/measures-messages.enum';
+import { RadarType } from '@enums/radar-type.enum';
+import { ICatalog } from '@interfaces/catalog.interface';
+import { IFine } from '@interfaces/fine.interfaces';
+import { IMeasure } from '@interfaces/measure.interface';
 
 export const getMessages = (
   fine: IFine,

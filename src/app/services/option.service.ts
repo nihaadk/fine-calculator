@@ -4,10 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class OptionService {
-  constructor() {}
-
   getOptions(enumType: { [key: number]: string }): string[] {
-    const enumValues = Object.values(enumType);
-    return enumValues;
+    return Object.values(enumType);
   }
 }

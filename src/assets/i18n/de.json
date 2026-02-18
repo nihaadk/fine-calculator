@@ -1,10 +1,10 @@
 {
   "APP_TITLE": "Bussenrechner",
   "INTRODUCTION": "Bitte tragen Sie Ihre Daten in das Formular ein, damit die Berechnung durfgeführt werden kann.",
-  "COPYRIGHT": "Copyright © 2023 – Alle Rechte vorbehalten",
+  "COPYRIGHT": "Copyright © 2025 – Alle Rechte vorbehalten",
   "INPUT": "Eingabe",
   "RESULT": "Ergebnis",
-  "SAFETY_MARGIN": "Sicherheitsmarge",
+  "SAFETY_MARGIN": "Toleranz",
   "NET_SPEED": "Netto-Geschwindigkeit",
   "EXCEEDING": "Überschreitung um",
   "FINE": "Bussgeld",
@@ -17,9 +17,9 @@
   },
   "RADAR_TYPE": "Radar-Typ",
   "RADAR_TYPE_OPTIONS": {
-    "LASER_FIX": "Fixer Laser Radar (Sicherheitsmarge 3-5 km/h)",
-    "RADAR_FIX": "Fixer Radar (Sicherheitsmarge 5-7 km/h)",
-    "RADAR_MOBILE": "Mobiler Radar (Sicherheitsmarge 7-9 km/h)"
+    "LASER_FIX": "Fixer Laser Radar (Toleranz 3-5 km/h)",
+    "RADAR_FIX": "Fixer Radar (Toleranz 5-7 km/h)",
+    "RADAR_MOBILE": "Mobiler Radar (Toleranz 7-9 km/h)"
   },
   "ALLOWED_SPEED": "Erlaubte Geschwindigkeit",
   "ESTIMATED_SPEED": "Geschätzte Geschwindigkeit",

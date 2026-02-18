@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { NavbarComponent } from '@layouts/navbar/navbar.component';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/layout/navbar/navbar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NavbarComponent],
+      imports: [AppComponent, NavbarComponent, TranslateModule.forRoot()],
     }).compileComponents();
   });
 

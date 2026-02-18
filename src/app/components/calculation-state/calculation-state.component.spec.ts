@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { TranslateModule } from '@ngx-translate/core';
 import { CalculationStateComponent } from './calculation-state.component';
 
 describe('CalculationStateComponent', () => {
@@ -8,10 +9,9 @@ describe('CalculationStateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CalculationStateComponent]
-    })
-    .compileComponents();
-    
+      imports: [CalculationStateComponent, TranslateModule.forRoot()],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CalculationStateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

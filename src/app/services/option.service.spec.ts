@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
-import { OptionService } from './option.service';
+import { OptionService } from '@services/option.service';
 
 describe('OptionService', () => {
   let service: OptionService;

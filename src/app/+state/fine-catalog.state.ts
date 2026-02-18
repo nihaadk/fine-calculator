@@ -1,6 +1,6 @@
-import { FinePrice } from '../enums/fine-price.enum';
-import { StreetType } from '../enums/street-type.enum';
-import { ICatalog } from '../interfaces/catalog.interface';
+import { FinePrice } from '@enums/fine-price.enum';
+import { StreetType } from '@enums/street-type.enum';
+import { ICatalog } from '@interfaces/catalog.interface';
 
 export const FINE_CATALOG_STATE: ICatalog[] = [
   {

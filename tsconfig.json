@@ -1,6 +1,19 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@state/*": ["app/+state/*"],
+      "@components/*": ["app/components/*"],
+      "@config/*": ["app/config/*"],
+      "@enums/*": ["app/enums/*"],
+      "@interfaces/*": ["app/interfaces/*"],
+      "@services/*": ["app/services/*"],
+      "@mocks/*": ["app/mocks/*"],
+      "@pages/*": ["app/pages/*"],
+      "@utils/*": ["app/utils/*"],
+      "@layouts/*": ["app/components/layouts/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -12,12 +25,11 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

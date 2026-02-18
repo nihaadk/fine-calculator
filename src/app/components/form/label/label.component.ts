@@ -1,13 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-label',
-  standalone: true,
-  imports: [CommonModule],
   template: `
-    <label class="label" [htmlFor]="for()">
-      <span class="label-text text-xl py-2">
+    <label class="label cursor-pointer" [for]="for()">
+      <span class="label-text text-base sm:text-xl py-1 sm:py-2">
         <ng-content />
       </span>
     </label>

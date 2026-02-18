@@ -1,0 +1,26 @@
+[
+  {
+    "type": "INNER_TOWN",
+    "measures": [
+      { "message": "WARNING",                  "speed": { "from": 16, "to": 20  } },
+      { "message": "REMOVE_1_MONTH_LICENSE",   "speed": { "from": 21, "to": 24  } },
+      { "message": "REMOVE_3_MONTH_LICENSE",   "speed": { "from": 25, "to": 150 } }
+    ]
+  },
+  {
+    "type": "OUT_OF_TOWN",
+    "measures": [
+      { "message": "WARNING",                  "speed": { "from": 21, "to": 25  } },
+      { "message": "REMOVE_1_MONTH_LICENSE",   "speed": { "from": 26, "to": 29  } },
+      { "message": "REMOVE_3_MONTH_LICENSE",   "speed": { "from": 30, "to": 150 } }
+    ]
+  },
+  {
+    "type": "HIGHWAY",
+    "measures": [
+      { "message": "WARNING",                  "speed": { "from": 26, "to": 30  } },
+      { "message": "REMOVE_1_MONTH_LICENSE",   "speed": { "from": 31, "to": 34  } },
+      { "message": "REMOVE_3_MONTH_LICENSE",   "speed": { "from": 35, "to": 150 } }
+    ]
+  }
+]

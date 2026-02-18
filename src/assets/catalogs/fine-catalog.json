@@ -1,0 +1,35 @@
+[
+  {
+    "type": "INNER_TOWN",
+    "measures": [
+      { "message": "FINE_40_CHF",  "speed": { "from": 1,  "to": 5   } },
+      { "message": "FINE_120_CHF", "speed": { "from": 6,  "to": 10  } },
+      { "message": "FINE_250_CHF", "speed": { "from": 11, "to": 15  } },
+      { "message": "POLICE_REPORT","speed": { "from": 16, "to": 20  } },
+      { "message": "POLICE_REPORT","speed": { "from": 21, "to": 25  } },
+      { "message": "POLICE_REPORT","speed": { "from": 25, "to": 120 } }
+    ]
+  },
+  {
+    "type": "OUT_OF_TOWN",
+    "measures": [
+      { "message": "FINE_40_CHF",  "speed": { "from": 1,  "to": 5   } },
+      { "message": "FINE_100_CHF", "speed": { "from": 6,  "to": 10  } },
+      { "message": "FINE_160_CHF", "speed": { "from": 11, "to": 15  } },
+      { "message": "FINE_240_CHF", "speed": { "from": 16, "to": 20  } },
+      { "message": "POLICE_REPORT","speed": { "from": 21, "to": 25  } },
+      { "message": "POLICE_REPORT","speed": { "from": 25, "to": 120 } }
+    ]
+  },
+  {
+    "type": "HIGHWAY",
+    "measures": [
+      { "message": "FINE_20_CHF",  "speed": { "from": 1,  "to": 5   } },
+      { "message": "FINE_60_CHF",  "speed": { "from": 6,  "to": 10  } },
+      { "message": "FINE_120_CHF", "speed": { "from": 11, "to": 15  } },
+      { "message": "FINE_180_CHF", "speed": { "from": 16, "to": 20  } },
+      { "message": "FINE_260_CHF", "speed": { "from": 21, "to": 25  } },
+      { "message": "POLICE_REPORT","speed": { "from": 25, "to": 120 } }
+    ]
+  }
+]
