@@ -1,5 +1,5 @@
 import { Component, effect, inject, signal } from '@angular/core';
-import { Control, form } from '@angular/forms/signals';
+import { FormField, form } from '@angular/forms/signals';
 import { FormControlWrapperComponent } from '@components/form/form-control-wrapper/form-control-wrapper.component';
 import { LabelComponent } from '@components/form/label/label.component';
 import { RadioControlerComponent } from '@components/form/radio-controler/radio-controler.component';
@@ -14,7 +14,7 @@ import { Store } from '@state/store';
 @Component({
   selector: 'app-entry-form',
   imports: [
-    Control,
+    FormField,
     RadioControlerComponent,
     RangeControlerComponent,
     LabelComponent,
@@ -27,8 +27,7 @@ import { Store } from '@state/store';
         <app-label for="streetTyp">{{ 'STREET_TYPE' | translate }}</app-label>
         <app-radio-contoler
           id="streetTyp"
-          name="streetTyp"
-          [control]="form.streetTyp"
+          [formField]="form.streetTyp"
           [options]="streetOptions"
           [translatePrefix]="'STREET_TYPE_OPTIONS'"
         />
@@ -38,23 +37,22 @@ import { Store } from '@state/store';
         <app-label for="allowedSpeed">{{ 'ALLOWED_SPEED' | translate }}</app-label>
         <app-range-contoler
           id="allowedSpeed"
-          [control]="form.allowedSpeed"
+          [formField]="form.allowedSpeed"
           [step]="10"
-          [max]="120"
+          [maxValue]="120"
         />
       </app-form-control>
 
       <app-form-control>
         <app-label for="netSpeed">{{ 'ESTIMATED_SPEED' | translate }}</app-label>
-        <app-range-contoler id="netSpeed" [control]="form.netSpeed" [max]="150" />
+        <app-range-contoler id="netSpeed" [formField]="form.netSpeed" [maxValue]="150" />
       </app-form-control>
 
       <app-form-control>
         <app-label for="radarTyp">{{ 'RADAR_TYPE' | translate }}</app-label>
         <app-radio-contoler
           id="radarTyp"
-          name="radarTyp"
-          [control]="form.radarTyp"
+          [formField]="form.radarTyp"
           [options]="radarOptions"
           [translatePrefix]="'RADAR_TYPE_OPTIONS'"
         />

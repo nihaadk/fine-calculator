@@ -35,7 +35,6 @@ export class RadioControlerComponent implements FormValueControl<radioValueType>
   translatePrefix = input<string>('');
   name = input<string>('radio-name');
   value = model<radioValueType>(null);
-  touched = model(false);
 
   valueChanged(newValue: radioValueType): void {
     this.value.set(newValue);

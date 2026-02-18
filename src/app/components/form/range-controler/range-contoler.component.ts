@@ -10,8 +10,8 @@ type rangeValueType = number | null;
       [id]="id()"
       [step]="step()"
       [value]="value()"
-      [min]="min()"
-      [max]="max()"
+      [min]="minValue()"
+      [max]="maxValue()"
       (input)="onInputChange($event)"
       type="range"
       class="range range-primary range-md w-full"
@@ -26,8 +26,8 @@ export class RangeControlerComponent implements FormValueControl<rangeValueType>
   id = input.required<string>();
   step = input<number>(1);
   value = model<rangeValueType>(0);
-  min = input<number | undefined>(0);
-  max = input<number | undefined>(130);
+  minValue = input<number | undefined>(0);
+  maxValue = input<number | undefined>(130);
   touched = model(false);
 
   onInputChange(event: Event): void {
