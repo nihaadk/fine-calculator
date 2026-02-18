@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TranslateModule } from '@ngx-translate/core';
-import { RadioControlerComponent } from './radio-controler.component';
+import { RadioControlerComponent } from './radio-controller.component';
 
-describe('RadioContolerComponent', () => {
+describe('RadioControllerComponent', () => {
   let component: RadioControlerComponent;
   let fixture: ComponentFixture<RadioControlerComponent>;
 

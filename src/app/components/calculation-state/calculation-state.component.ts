@@ -8,7 +8,7 @@ import { getExceedingSpeed } from '@utils/store-helper';
   selector: 'app-calculation-state',
   imports: [TranslatePipe],
   template: `
-    <div class="stats stats-vertical lg:stats-horizontal my-5">
+    <div class="stats stats-vertical sm:stats-horizontal shadow w-full my-3 sm:my-5">
       <div class="stat place-items-center">
         <div class="stat-title info-content">{{ 'SAFETY_MARGIN' | translate }}</div>
         <div class="stat-value">{{ allowedSpeed() }} <span class="text-base">km/h</span></div>

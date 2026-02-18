@@ -6,16 +6,17 @@ type radioValueType = string | null;
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-radio-contoler',
+  selector: 'app-radio-controller',
+  host: { role: 'radiogroup', '[attr.aria-label]': 'ariaLabel()' },
   imports: [TranslateDirective],
   template: `
     @for (option of options(); track $index) {
-      <div class="form-control w-full mb-4">
+      <div class="form-control w-full mb-1 sm:mb-2">
         <label
           [for]="getId(option, $index)"
-          class="label cursor-pointer flex justify-between items-center w-full"
+          class="label cursor-pointer flex justify-between items-center w-full min-h-[44px] py-1 sm:py-2"
         >
-          <span class="label-text" translate>{{ prefix + option }}</span>
+          <span class="label-text text-sm sm:text-base" translate>{{ prefix + option }}</span>
           <input
             type="radio"
             [name]="name()"
@@ -23,7 +24,7 @@ type radioValueType = string | null;
             [value]="value()"
             [checked]="isCheck(value(), option)"
             (change)="valueChanged(option)"
-            class="radio radio-primary"
+            class="radio radio-primary radio-sm sm:radio-md"
           />
         </label>
       </div>
@@ -32,6 +33,7 @@ type radioValueType = string | null;
 })
 export class RadioControlerComponent implements FormValueControl<radioValueType> {
   id = input<string>();
+  ariaLabel = input<string>('');
   options = input.required<string[]>();
   translatePrefix = input<string>('');
   name = input<string>('radio-name');

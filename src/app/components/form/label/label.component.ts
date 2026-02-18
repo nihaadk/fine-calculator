@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   selector: 'app-label',
   template: `
     <label class="label cursor-pointer" [for]="for()">
-      <span class="label-text text-xl py-2">
+      <span class="label-text text-base sm:text-xl py-1 sm:py-2">
         <ng-content />
       </span>
     </label>

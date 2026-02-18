@@ -5,7 +5,12 @@ type rangeValueType = number | null;
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-range-contoler',
+  selector: 'app-range-controller',
+  host: {
+    '[attr.aria-label]': 'ariaLabel()',
+    '[attr.aria-valuenow]': 'value()',
+    '[attr.aria-valuetext]': 'value() + " km/h"',
+  },
   template: `
     <input
       [id]="id()"
@@ -18,13 +23,14 @@ type rangeValueType = number | null;
       class="range range-primary range-md w-full"
     />
 
-    <div class="w-full flex justify-center text-md px-2 py-2">
+    <div class="w-full flex justify-center text-sm sm:text-base px-2 py-1 sm:py-2">
       <span>{{ value() }} km/h</span>
     </div>
   `,
 })
 export class RangeControlerComponent implements FormValueControl<rangeValueType> {
   id = input.required<string>();
+  ariaLabel = input<string>('');
   step = input<number>(1);
   value = model<rangeValueType>(0);
   minValue = input<number | undefined>(0);

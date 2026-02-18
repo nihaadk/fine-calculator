@@ -1,12 +1,15 @@
-import { computed } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { computed, inject } from '@angular/core';
 import { Theme } from '@enums/theme.enum';
+import { ICatalog } from '@interfaces/catalog.interface';
 import { IFine } from '@interfaces/fine.interfaces';
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import {
   getExceedingSpeed,
   getMessages as getMessage,
   getRadarValue,
 } from '@utils/store-helper';
+import { forkJoin } from 'rxjs';
 import { MeasuresMessages } from '../enums/measures-messages.enum';
 import { initiState } from './init.state';
 import { withThemeState } from './theme.store';
@@ -38,4 +41,15 @@ export const Store = signalStore(
     updateFine: (fine: IFine) => patchState(store, { fine }),
     updateTheme: (theme: Theme) => patchState(store, { theme }),
   })),
+  withHooks({
+    onInit(store) {
+      const http = inject(HttpClient);
+      forkJoin({
+        fine: http.get<ICatalog[]>('/assets/catalogs/fine-catalog.json'),
+        measure: http.get<ICatalog[]>('/assets/catalogs/measure-catalog.json'),
+      }).subscribe(({ fine, measure }) => {
+        patchState(store, { fineCatalog: fine, measureCatalog: measure });
+      });
+    },
+  }),
 );
