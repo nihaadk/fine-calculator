@@ -1,8 +1,9 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-footer',
   imports: [TranslatePipe, NgOptimizedImage],
   template: `

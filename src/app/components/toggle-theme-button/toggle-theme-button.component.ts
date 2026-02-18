@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Store } from '@state/store';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-toggle-theme-button',
   template: `
     <label class="swap swap-rotate">

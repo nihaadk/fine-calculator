@@ -1,9 +1,10 @@
-import { Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 import { FormValueControl } from '@angular/forms/signals';
 
 type rangeValueType = number | null;
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-range-contoler',
   template: `
     <input

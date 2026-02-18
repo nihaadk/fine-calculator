@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { Language } from '@enums/language.enum';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { OptionService } from '@services/option.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-language-dropdown',
   imports: [TranslatePipe],
   template: `

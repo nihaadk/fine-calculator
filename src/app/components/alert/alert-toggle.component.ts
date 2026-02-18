@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { AlertErrorComponent } from '@components/alert/alert-error.component';
 import { AlertSuccessComponent } from '@components/alert/alert-success.component';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-alert-toggle',
   imports: [CommonModule, AlertSuccessComponent, AlertErrorComponent],
   template: `

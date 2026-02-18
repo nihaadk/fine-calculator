@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { FormField, form } from '@angular/forms/signals';
 import { FormControlWrapperComponent } from '@components/form/form-control-wrapper/form-control-wrapper.component';
 import { LabelComponent } from '@components/form/label/label.component';
@@ -12,6 +12,7 @@ import { OptionService } from '@services/option.service';
 import { Store } from '@state/store';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-entry-form',
   imports: [
     FormField,

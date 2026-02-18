@@ -1,10 +1,11 @@
-import { Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 import { FormValueControl } from '@angular/forms/signals';
 import { TranslateDirective } from '@ngx-translate/core';
 
 type radioValueType = string | null;
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-radio-contoler',
   imports: [TranslateDirective],
   template: `
