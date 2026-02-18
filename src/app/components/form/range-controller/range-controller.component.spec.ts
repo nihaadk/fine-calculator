@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RangeControlerComponent } from './range-contoler.component';
+import { RangeControlerComponent } from './range-controller.component';
 
-describe('RangeContolerComponent', () => {
+describe('RangeControllerComponent', () => {
   let component: RangeControlerComponent;
   let fixture: ComponentFixture<RangeControlerComponent>;
 

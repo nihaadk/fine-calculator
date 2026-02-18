@@ -1,0 +1,16 @@
+{
+  "name": "Fine Calculator",
+  "short_name": "FineCalc",
+  "theme_color": "#3d4451",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/home",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
